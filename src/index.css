@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg: #111;
+  --bg-accent-1: #28292f;
+  --footer-up: #212121;
+  --footer-bot: #000000;
+  --fg: #fff;
+  --blue-default: #0070f3;
+  --blue-default-alpha: #0071f398;
+  --blue-dark: #005bea;
+  --blue-light: #00c6fb;
+  --cyan-default: #50e3c2;
+  --tgl-btn: url(./icon-sun.svg);
+  --bg-work: url(./curve-line.svg);
+}
+
+.light {
+  --bg: #fff;
+  --bg-accent-1: #fff;
+  --fg: #111;
+  --tgl-btn: url(./icon-moon.svg);
+  --bg-work: url(./curve-line-light.svg);
+}
