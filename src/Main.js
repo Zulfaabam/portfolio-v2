@@ -24,9 +24,9 @@ export default class Main extends Component {
               />
               <p>
                 My name is Zulfa Fatah Akbar Ahmad, you can call me Abam. I am
-                20 years old. I am a third-year student of Computer Engineering
-                at Diponegoro University, Indonesia. Currently focusing on my
-                goal to become a Front-end Developer.
+                20 years old and a third-year student of Computer Engineering at
+                Diponegoro University, Indonesia. Currently focusing on my goal
+                to become a Front-end Developer.
               </p>
               <div className="links">
                 <a href="https://www.linkedin.com/in/zulfa-fatah-akbar-ahmad/">
