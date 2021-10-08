@@ -22,6 +22,8 @@ body {
   --cyan-default: #50e3c2;
   --tgl-btn: url(./icon-sun.svg);
   --bg-work: url(./curve-line.svg);
+
+  transition: all 200ms ease;
 }
 
 .light {
@@ -30,4 +32,6 @@ body {
   --fg: #111;
   --tgl-btn: url(./icon-moon.svg);
   --bg-work: url(./curve-line-light.svg);
+
+  transition: all 200ms ease;
 }
