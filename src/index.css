@@ -12,6 +12,7 @@ body {
 
   --bg: #111;
   --bg-accent-1: #28292f;
+  --bg-header: url(./Polygon-0.2s-1600px-2.svg);
   --footer-up: #212121;
   --footer-bot: #000000;
   --fg: #fff;
@@ -29,7 +30,10 @@ body {
 .light {
   --bg: #fff;
   --bg-accent-1: #fff;
+  --bg-header: url(./Polygon-0.2s-1600px-2-light.svg);
   --fg: #111;
+  --blue-dark: #005bea;
+  --blue-light: #0070f3;
   --tgl-btn: url(./icon-moon.svg);
   --bg-work: url(./curve-line-light.svg);
 

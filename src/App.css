@@ -4,7 +4,7 @@
 
 /* HEADER */
 .header {
-  background: url(./Polygon-0.2s-1600px-2.svg);
+  background: var(--bg-header);
   background-size: cover;
   background-position: top;
 
@@ -12,6 +12,8 @@
   height: 450px;
   text-align: center;
   padding: 25px 0;
+
+  transition: all 200ms ease;
 
   /* border: 1px solid white; */
 }
