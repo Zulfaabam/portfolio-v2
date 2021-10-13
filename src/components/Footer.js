@@ -24,8 +24,7 @@ export default class Footer extends Component {
         </div>
         <div className="footer-bottom">
           <p>
-            &copy; Copyright 2021 | Created by <a href="#header">Abam</a> using
-            React
+            &copy; Copyright 2021 | Created by <a href="#header">Abam</a>
           </p>
         </div>
       </div>
