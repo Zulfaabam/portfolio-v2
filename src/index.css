@@ -12,7 +12,7 @@ body {
 
   --bg: #111;
   --bg-accent-1: #28292f;
-  --bg-header: url(./Polygon-0.2s-1600px-2.svg);
+  --bg-header: url(./images/Polygon-0.2s-1600px-2.svg);
   --footer-up: #212121;
   --footer-bot: #000000;
   --fg: #fff;
@@ -21,8 +21,8 @@ body {
   --blue-dark: #005bea;
   --blue-light: #00c6fb;
   --cyan-default: #50e3c2;
-  --tgl-btn: url(./icon-sun.svg);
-  --bg-work: url(./curve-line.svg);
+  --tgl-btn: url(./images/icon-sun.svg);
+  --bg-work: url(./images/curve-line.svg);
 
   transition: all 200ms ease;
 }
@@ -30,12 +30,12 @@ body {
 .light {
   --bg: #fff;
   --bg-accent-1: #fff;
-  --bg-header: url(./Polygon-0.2s-1600px-2-light.svg);
+  --bg-header: url(./images/Polygon-0.2s-1600px-2-light.svg);
   --fg: #111;
   --blue-dark: #005bea;
   --blue-light: #0070f3;
-  --tgl-btn: url(./icon-moon.svg);
-  --bg-work: url(./curve-line-light.svg);
+  --tgl-btn: url(./images/icon-moon.svg);
+  --bg-work: url(./images/curve-line-light.svg);
 
   transition: all 200ms ease;
 }
