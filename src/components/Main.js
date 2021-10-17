@@ -29,10 +29,18 @@ export default class Main extends Component {
                 to become a Front-end Developer.
               </p>
               <div className="links">
-                <a href="https://www.linkedin.com/in/zulfa-fatah-akbar-ahmad/">
+                <a
+                  href="https://www.linkedin.com/in/zulfa-fatah-akbar-ahmad/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Full Profile
                 </a>
-                <a href="https://drive.google.com/file/d/1Wszn1CkqDRylc5-IkwNGG6AU6lV0Tp5I/view?usp=sharing">
+                <a
+                  href="https://drive.google.com/file/d/1Wszn1CkqDRylc5-IkwNGG6AU6lV0Tp5I/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   CV
                 </a>
               </div>
