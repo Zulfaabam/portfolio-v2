@@ -82,9 +82,14 @@ export const toolLists = [
     alt: 'SASS icon',
   },
   {
-    title: 'ReactJS',
+    title: 'React JS',
     image: 'https://i.ibb.co/fxDxTjh/logos-reactjs.png',
     alt: 'ReactJS icon',
+  },
+  {
+    title: 'Tailwind CSS',
+    image: 'https://i.ibb.co/mTHny8k/logos-tailwindcss.png',
+    alt: 'Tailwind CSS',
   },
 ]
 
