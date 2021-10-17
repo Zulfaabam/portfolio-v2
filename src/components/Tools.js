@@ -8,6 +8,7 @@ export default class Tools extends Component {
           src={this.props.image}
           alt={this.props.alt}
           title={this.props.title}
+          className={this.props.className}
         />
       </div>
     )

@@ -55,41 +55,49 @@ export const toolLists = [
     title: 'Visual Studio Code',
     image: 'https://i.ibb.co/dpqhjvR/logos-vscode.png',
     alt: 'VS code icon',
+    className: 'vscode-icon',
   },
   {
     title: 'Figma',
     image: 'https://i.ibb.co/P1Gn7QQ/logos-figma.png',
     alt: 'Figma icon',
+    className: 'figma-icon',
   },
   {
     title: 'HTML',
     image: 'https://i.ibb.co/ft6WYsz/logos-html-5.png',
     alt: 'HTML icon',
+    className: 'html-icon',
   },
   {
     title: 'CSS',
     image: 'https://i.ibb.co/7bwGQT9/logos-css-3.png',
     alt: 'CSS icon',
+    className: 'css-icon',
   },
   {
     title: 'JavaScript',
     image: 'https://i.ibb.co/7g1Zcv4/logos-javascript.png',
     alt: 'JavaScript icon',
+    className: 'javascript-icon',
   },
   {
     title: 'SASS',
     image: 'https://i.ibb.co/j80J7BD/logos-sass.png',
     alt: 'SASS icon',
+    className: 'sass-icon',
   },
   {
     title: 'React JS',
     image: 'https://i.ibb.co/fxDxTjh/logos-reactjs.png',
     alt: 'ReactJS icon',
+    className: 'reactjs-icon',
   },
   {
     title: 'Tailwind CSS',
     image: 'https://i.ibb.co/mTHny8k/logos-tailwindcss.png',
-    alt: 'Tailwind CSS',
+    alt: 'Tailwind CSS icon',
+    className: 'tailwind-icon',
   },
 ]
 

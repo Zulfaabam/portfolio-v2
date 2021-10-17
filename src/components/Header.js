@@ -12,7 +12,11 @@ export default class Header extends Component {
         ></div>
         <div className="intro-wrapper">
           <div className="intro-img">
-            <img src="https://i.ibb.co/R4pTgPX/abam-rounded.png" alt="abam" />
+            <img
+              src="https://i.ibb.co/R4pTgPX/abam-rounded.png"
+              alt="Abam's"
+              title="It's me, Abam"
+            />
           </div>
           <div className="intro-info">
             <h1 className="title">

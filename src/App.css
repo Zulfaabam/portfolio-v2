@@ -286,6 +286,10 @@
   height: 35px;
 }
 
+.reactjs-icon:hover {
+  animation: spin 8s infinite linear;
+}
+
 /* FOOTER */
 .footer-upper {
   background: var(--footer-up);
@@ -534,5 +538,14 @@
   /* Reset for the last half to pause */
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }

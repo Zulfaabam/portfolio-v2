@@ -76,6 +76,7 @@ export default class Main extends Component {
                   title={toolList.title}
                   image={toolList.image}
                   alt={toolList.alt}
+                  className={toolList.className}
                 />
               )
             })}
