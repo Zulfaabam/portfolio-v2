@@ -1,16 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Tools extends Component {
-  render() {
-    return (
-      <div className="tools-box">
-        <img
-          src={this.props.image}
-          alt={this.props.alt}
-          title={this.props.title}
-          className={this.props.className}
-        />
-      </div>
-    )
-  }
+export default function Tools({ image, alt, title, className }) {
+  return (
+    <div className="tools-box">
+      <img src={image} alt={alt} title={title} className={className} />
+    </div>
+  )
 }

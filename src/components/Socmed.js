@@ -1,15 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Socmed extends Component {
-  render() {
-    return (
-      <a href={this.props.link} target="_blank" rel="noreferrer">
-        <img
-          src={this.props.image}
-          alt={this.props.alt}
-          title={this.props.title}
-        />
-      </a>
-    )
-  }
+export default function Socmed({ link, image, alt, title }) {
+  return (
+    <a href={link} target="_blank" rel="noreferrer">
+      <img src={image} alt={alt} title={title} />
+    </a>
+  )
 }
