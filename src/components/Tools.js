@@ -1,9 +1,10 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
-export default function Tools({ image, alt, title, className }) {
+export default function Tools({ image, alt, title, className, animation }) {
   return (
-    <div className="tools-box">
+    <motion.div className="tools-box" animate={animation}>
       <img src={image} alt={alt} title={title} className={className} />
-    </div>
+    </motion.div>
   )
 }

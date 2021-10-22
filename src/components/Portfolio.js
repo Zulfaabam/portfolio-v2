@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer'
 
 export default function Portfolio() {
   const { ref, inView } = useInView({
-    threshold: 0.25,
+    threshold: 0.3,
   })
   const animation = useAnimation()
 
