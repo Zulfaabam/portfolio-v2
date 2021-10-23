@@ -123,12 +123,14 @@
   width: 100%;
   padding: 25px 0;
   text-align: center;
+  overflow: hidden;
 }
 
 .about-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .illustration {
@@ -179,6 +181,7 @@
   width: 100%;
   padding-top: 25px;
   text-align: center;
+  overflow: hidden;
 }
 
 .portfolio-wrapper {

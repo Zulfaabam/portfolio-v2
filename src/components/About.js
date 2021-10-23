@@ -1,17 +1,55 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 export default function About() {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  })
+  const animationLeft = useAnimation()
+  const animationRight = useAnimation()
+
+  useEffect(() => {
+    console.log(inView)
+    if (inView) {
+      animationLeft.start({
+        x: 0,
+        transition: {
+          type: 'spring',
+          duration: 1.5,
+          bounce: 0.3,
+        },
+      })
+      animationRight.start({
+        x: 0,
+        transition: {
+          type: 'spring',
+          duration: 1.5,
+          bounce: 0.3,
+        },
+      })
+    } else if (!inView) {
+      animationLeft.start({
+        x: '-100vw',
+      })
+      animationRight.start({
+        x: '100vw',
+      })
+    }
+  }, [inView, animationLeft, animationRight])
+
   return (
     <div className="about" id="about">
       <h2 className="subtitle">About Me</h2>
-      <div className="about-wrapper">
-        <div className="illustration">
+      <div ref={ref} className="about-wrapper">
+        <motion.div className="illustration" animate={animationLeft}>
           <img
             src="https://i.ibb.co/XSrjqCb/Web-Developer-Flatline.png"
             alt="Developer illustration"
           />
-        </div>
-        <div className="about-details-wrapper">
+        </motion.div>
+        <motion.div className="about-details-wrapper" animate={animationRight}>
           <img
             src="https://i.ibb.co/M7yRxfv/mdi-hand-wave-outline.png"
             alt="waving icon"
@@ -38,7 +76,7 @@ export default function About() {
               CV
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
