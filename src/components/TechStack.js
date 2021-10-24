@@ -31,7 +31,7 @@ export default function TechStack() {
 
   return (
     <div ref={ref} className="tools" id="tools">
-      <h2 className="subtitle">Tools & Languages</h2>
+      <h2 className="subtitle">Tech Stack</h2>
       <div className="tools-wrapper">
         {toolLists.map((toolList, index) => {
           return (

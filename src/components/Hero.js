@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-export default function Header() {
+export default function Hero() {
   const title = `Hello, I'm Abam`
   const desc1 = 'Computer Engineering student,'
   const desc2 = 'Passionate on Front-End Web'

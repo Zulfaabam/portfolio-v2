@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import './App.css'
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import Homepage from './components/Homepage'
+import FullProfile from './components/FullProfile'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Main />
-        <Footer />
-      </div>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route path="/fullprofile" component={FullProfile} />
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }

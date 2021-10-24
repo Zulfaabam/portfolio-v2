@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { Link } from 'react-router-dom'
 
 export default function About() {
   const { ref, inView } = useInView({
@@ -61,13 +62,7 @@ export default function About() {
             become a Front-end Developer.
           </p>
           <div className="links">
-            <a
-              href="https://www.linkedin.com/in/zulfa-fatah-akbar-ahmad/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Full Profile
-            </a>
+            <Link to="/fullprofile">Full Profile</Link>
             <a
               href="https://drive.google.com/file/d/1Wszn1CkqDRylc5-IkwNGG6AU6lV0Tp5I/view?usp=sharing"
               target="_blank"
