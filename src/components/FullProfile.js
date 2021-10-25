@@ -1,11 +1,18 @@
 import React from 'react'
-// import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Footer from './Footer'
 import '../Profile.css'
 
 export default function FullProfile() {
   return (
-    <div className="full-profile" id="full-profile">
+    <motion.div
+      className="full-profile"
+      id="full-profile"
+      initial={{ y: '-100vh' }}
+      animate={{ y: 0 }}
+      exit={{ y: '-100vh' }}
+      transition={{ duration: 1 }}
+    >
       <div className="content-profile">
         {/* <motion.div
           className="theme-changer"
@@ -38,6 +45,6 @@ export default function FullProfile() {
         </div>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   )
 }

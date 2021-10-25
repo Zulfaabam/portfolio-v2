@@ -1,22 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
 import Homepage from './components/Homepage'
 import FullProfile from './components/FullProfile'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import ScrollToTop from './components/ScrollToTop'
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <Switch>
+export default function App() {
+  const location = useLocation()
+
+  return (
+    <div className="App">
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <ScrollToTop>
+          <Switch location={location} key={location.pathname}>
             <Route exact path="/" component={Homepage} />
             <Route path="/fullprofile" component={FullProfile} />
           </Switch>
-        </div>
-      </Router>
-    )
-  }
+        </ScrollToTop>
+      </AnimatePresence>
+    </div>
+  )
 }
-
-export default App
