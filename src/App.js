@@ -12,12 +12,11 @@ export default function App() {
   return (
     <div className="App">
       <AnimatePresence exitBeforeEnter initial={false}>
-        <ScrollToTop>
-          <Switch location={location} key={location.pathname}>
-            <Route exact path="/" component={Homepage} />
-            <Route path="/fullprofile" component={FullProfile} />
-          </Switch>
-        </ScrollToTop>
+        <ScrollToTop />
+        <Switch location={location} key={location.pathname}>
+          <Route exact path="/" component={Homepage} />
+          <Route path="/fullprofile" component={FullProfile} />
+        </Switch>
       </AnimatePresence>
     </div>
   )

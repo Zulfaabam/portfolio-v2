@@ -11,7 +11,7 @@ export default function FullProfile() {
       initial={{ y: '-100vh' }}
       animate={{ y: 0 }}
       exit={{ y: '-100vh' }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="content-profile">
         {/* <motion.div
