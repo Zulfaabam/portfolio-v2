@@ -62,7 +62,7 @@ export default function About() {
             become a Front-end Developer.
           </p>
           <div className="links">
-            <Link to="/fullprofile">Full Profile</Link>
+            <Link to="/fullprofile">Read More</Link>
             <a
               href="https://drive.google.com/file/d/1Wszn1CkqDRylc5-IkwNGG6AU6lV0Tp5I/view?usp=sharing"
               target="_blank"

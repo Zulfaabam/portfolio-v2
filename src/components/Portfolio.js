@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { imgLists } from './Lists'
-import Box from './Box'
 import { useInView } from 'react-intersection-observer'
 
 export default function Portfolio() {
@@ -46,6 +45,25 @@ export default function Portfolio() {
           )
         })}
       </motion.div>
+    </div>
+  )
+}
+
+const Box = ({ image, alt, title, live, git }) => {
+  return (
+    <div className="box">
+      <img className="img-fluid" src={image} alt={alt} title={title} />
+      <div className="info">
+        <div className="caption">
+          <h4>{title}</h4>
+          <a href={live} target="_blank" rel="noreferrer">
+            Live site
+          </a>
+          <a href={git} target="_blank" rel="noreferrer">
+            GitHub repo
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

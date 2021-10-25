@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { toolLists } from './Lists'
-import Tools from './Tools'
-import { useAnimation } from 'framer-motion'
+// import Tools from './Tools'
+import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 export default function TechStack() {
@@ -47,5 +47,13 @@ export default function TechStack() {
         })}
       </div>
     </div>
+  )
+}
+
+const Tools = ({ image, alt, title, className, animation }) => {
+  return (
+    <motion.div className="tools-box" animate={animation}>
+      <img src={image} alt={alt} title={title} className={className} />
+    </motion.div>
   )
 }

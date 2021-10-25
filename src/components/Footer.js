@@ -1,6 +1,5 @@
 import React from 'react'
 import { socmedLists } from './Lists'
-import Socmed from './Socmed'
 
 export default function Footer() {
   return (
@@ -27,5 +26,13 @@ export default function Footer() {
         </p>
       </div>
     </div>
+  )
+}
+
+const Socmed = ({ link, image, alt, title }) => {
+  return (
+    <a href={link} target="_blank" rel="noreferrer">
+      <img src={image} alt={alt} title={title} />
+    </a>
   )
 }
