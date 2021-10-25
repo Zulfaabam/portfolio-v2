@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence exitBeforeEnter initial={true}>
         <ScrollToTop />
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={Homepage} />
