@@ -163,6 +163,10 @@
   font-weight: 600;
   color: var(--fg);
   transition: all 300ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .links a:hover {

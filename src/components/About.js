@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
+import { AiOutlineArrowRight } from 'react-icons/ai'
 
 export default function About() {
   const { ref, inView } = useInView({
@@ -62,14 +63,16 @@ export default function About() {
             become a Front-end Developer.
           </p>
           <div className="links">
-            <Link to="/fullprofile">Read More</Link>
-            <a
+            <Link to="/fullprofile">
+              Read More <AiOutlineArrowRight />
+            </Link>
+            {/* <a
               href="https://drive.google.com/file/d/1Wszn1CkqDRylc5-IkwNGG6AU6lV0Tp5I/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
             >
               CV
-            </a>
+            </a> */}
           </div>
         </motion.div>
       </div>
