@@ -75,7 +75,9 @@ const Data = ({ content, link, name }) => {
     <>
       <li>
         <strong>{content}</strong>
-        <a href={link}>{name}</a>
+        <a href={link} target="_blank" rel="noreferrer">
+          {name}
+        </a>
       </li>
     </>
   )
