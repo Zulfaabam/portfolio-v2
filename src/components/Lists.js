@@ -133,3 +133,31 @@ export const socmedLists = [
     alt: 'Twitter icon',
   },
 ]
+
+export const dataLists = [
+  {
+    content: 'Email',
+    link: 'mailto:zulfafatahakbar@gmail.com',
+    name: 'zulfafatahakbar@gmail.com',
+  },
+  {
+    content: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/zulfa-fatah-akbar-ahmad/',
+    name: 'Zulfa Fatah Akbar Ahmad',
+  },
+  {
+    content: 'Github',
+    link: 'https://github.com/Zulfaabam',
+    name: 'Zulfaabam',
+  },
+  {
+    content: 'Instagram',
+    link: 'https://www.instagram.com/zfaabam/',
+    name: 'zfaabam',
+  },
+  {
+    content: 'Twitter',
+    link: 'https://twitter.com/zabamz1',
+    name: 'zabamz1',
+  },
+]
