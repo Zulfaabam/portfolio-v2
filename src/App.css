@@ -177,7 +177,8 @@
   background: var(--bg-work);
   background-size: cover;
   width: 100%;
-  padding-top: 25px;
+  padding: 25px 0;
+  margin-bottom: -1px;
   text-align: center;
   overflow: hidden;
 }

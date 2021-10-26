@@ -7,8 +7,8 @@ export default function Main() {
   return (
     <div className="main">
       <About />
-      <Portfolio />
       <TechStack />
+      <Portfolio />
     </div>
   )
 }
