@@ -1,6 +1,5 @@
 .content-profile {
-  /* background: url(/src/images/Polygon-0.2s-1600px-2.svg); */
-  background: var(--bg);
+  background: var(--bg-header);
   background-size: cover;
   background-position: center;
 

@@ -15,7 +15,7 @@ export default function FullProfile() {
       transition={{ duration: 0.5 }}
     >
       <div className="content-profile">
-        {/* <motion.div
+        <motion.div
           className="theme-changer"
           initial={{ y: '-100vh' }}
           animate={{ y: 0 }}
@@ -25,7 +25,7 @@ export default function FullProfile() {
           onClick={() => {
             document.body.classList.toggle('light')
           }}
-        ></motion.div> */}
+        ></motion.div>
         <div className="resume-wrapper">
           <h1 className="title">Résumé</h1>
           <div className="resume-detail">
