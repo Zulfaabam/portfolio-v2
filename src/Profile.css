@@ -1,5 +1,6 @@
 .content-profile {
-  background: url(https://i.ibb.co/rt50xdT/IMG20200125131033.jpg);
+  /* background: url(/src/images/Polygon-0.2s-1600px-2.svg); */
+  background: var(--bg);
   background-size: cover;
   background-position: center;
 
@@ -16,6 +17,8 @@
   justify-content: center;
   padding: 0 1rem;
   overflow: hidden;
+  max-width: 768px;
+  margin: 0 auto;
 }
 
 .resume-wrapper h1 {
@@ -131,16 +134,16 @@ li span {
 }
 
 @media screen and (min-width: 768px) {
-  .resume-wrapper {
+  /* .resume-wrapper {
     padding: 0 4rem;
-  }
+  } */
 
   .timeline {
     width: 500px;
   }
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .resume-wrapper {
     padding: 0 10rem;
   }
@@ -150,4 +153,4 @@ li span {
   .resume-wrapper {
     padding: 0 20rem;
   }
-}
+} */
