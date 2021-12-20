@@ -15,7 +15,7 @@ export default function FullProfile() {
       exit={{ y: '-100vh' }}
       transition={{ duration: 0.5 }}
     >
-      <div className="content-profile w-full h-screen py-20 bg-white dark:bg-dark bg-cover bg-center transition-all">
+      <div className="content-profile w-full h-full pt-20 pb-10 bg-white dark:bg-dark bg-cover bg-center transition-all">
         <TopNav />
         <div className="resume-wrapper flex flex-col justify-center px-4 overflow-hidden max-w-3xl mx-auto">
           <h1 className="subtitle mb-8">Résumé</h1>
