@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function TopNav() {
   return (
-    <div className="topnav w-full h-24 fixed top-0 left-0">
+    <div className="topnav w-full h-24 fixed top-0 left-0 px-4">
       <div className="max-w-5xl mx-auto h-full flex items-center">
         <motion.div
           className="theme-changer"
