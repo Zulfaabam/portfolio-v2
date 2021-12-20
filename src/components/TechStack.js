@@ -30,9 +30,13 @@ export default function TechStack() {
   }, [inView, animation])
 
   return (
-    <div ref={ref} className="tools" id="tools">
+    <div
+      ref={ref}
+      className="tools bg-dark-accents-1 p-6 text-center flex flex-col justify-center items-center"
+      id="tools"
+    >
       <h2 className="subtitle">Tech Stack</h2>
-      <div className="tools-wrapper">
+      <div className="tools-wrapper flex justify-center items-center flex-wrap my-4">
         {toolLists.map((toolList, index) => {
           return (
             <Tools
@@ -52,8 +56,16 @@ export default function TechStack() {
 
 const Tools = ({ image, alt, title, className, animation }) => {
   return (
-    <motion.div className="tools-box" animate={animation}>
-      <img src={image} alt={alt} title={title} className={className} />
+    <motion.div
+      className="tools-box bg-white flex justify-center items-center rounded-xl m-2 w-[65px] lg:w-[75px] aspect-square shadow-lg"
+      animate={animation}
+    >
+      <img
+        src={image}
+        alt={alt}
+        title={title}
+        className={`${className} h-[35px] lg:h-[45px]`}
+      />
     </motion.div>
   )
 }

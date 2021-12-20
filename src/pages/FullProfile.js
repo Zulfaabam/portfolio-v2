@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Footer from '../components/Footer'
-import './Profile.css'
+// import './Profile.css'
 import { dataLists } from '../components/Lists'
 
 export default function FullProfile() {

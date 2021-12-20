@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { imgLists } from './Lists'
 import { useInView } from 'react-intersection-observer'
+import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs'
 
 export default function Portfolio() {
   const { ref, inView } = useInView({
@@ -29,9 +30,16 @@ export default function Portfolio() {
   }, [inView, animation])
 
   return (
-    <div ref={ref} className="portfolio" id="portfolio">
+    <div
+      ref={ref}
+      className="portfolio bg-work-dark bg-cover w-full py-6 mb-[-1px] overflow-hidden"
+      id="portfolio"
+    >
       <h2 className="subtitle">My Latest Works</h2>
-      <motion.div className="portfolio-wrapper" animate={animation}>
+      <motion.div
+        className="portfolio-wrapper flex justify-center flex-wrap mt-12"
+        animate={animation}
+      >
         {imgLists.map((imgList, index) => {
           return (
             <Box
@@ -51,17 +59,34 @@ export default function Portfolio() {
 
 const Box = ({ image, alt, title, live, git }) => {
   return (
-    <div className="box">
-      <img className="img-fluid" src={image} alt={alt} title={title} />
-      <div className="info">
-        <div className="caption">
-          <h4>{title}</h4>
-          <a href={live} target="_blank" rel="noreferrer">
-            Live site
-          </a>
-          <a href={git} target="_blank" rel="noreferrer">
-            GitHub repo
-          </a>
+    <div className="box w-80 lg:w-96 xl:w-[448px] h-auto m-4 bg-gray text-white rounded-xl">
+      <img
+        className="img-fluid rounded-t-xl h-40 lg:w-96 xl:w-[448px] lg:h-48 xl:h-56"
+        src={image}
+        alt={alt}
+        title={title}
+      />
+      <div className="info p-2">
+        <div className="caption flex justify-between">
+          <h4 className="capitalize text-blue-light">{title}</h4>
+          <div className="flex gap-2">
+            <a
+              href={live}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1 hover:text-cyan transition-all"
+            >
+              Visit <BsBoxArrowUpRight />
+            </a>
+            <a
+              href={git}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1 hover:text-cyan transition-all"
+            >
+              GitHub <BsGithub />
+            </a>
+          </div>
         </div>
       </div>
     </div>

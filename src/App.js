@@ -13,7 +13,8 @@ export default function App() {
       <AnimatePresence exitBeforeEnter initial={true}>
         <ScrollToTop />
         <Routes location={location} key={location.pathname}>
-          <Route exact path="/" element={<Homepage />} />
+          {/* <Route path="/" element={<Navigate replace to="/movie" />} /> */}
+          <Route path="/" element={<Homepage />} />
           <Route path="/fullprofile" element={<FullProfile />} />
         </Routes>
       </AnimatePresence>

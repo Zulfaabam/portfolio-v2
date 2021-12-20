@@ -42,28 +42,45 @@ export default function About() {
   }, [inView, animationLeft, animationRight])
 
   return (
-    <div className="about" id="about">
+    <div
+      className="about bg-gradient-to-b from-dark to-dark-accents-1 w-full py-6 text-center overflow-hidden"
+      id="about"
+    >
       <h2 className="subtitle">About Me</h2>
-      <div ref={ref} className="about-wrapper">
-        <motion.div className="illustration" animate={animationLeft}>
+      <div
+        ref={ref}
+        className="about-wrapper w-full flex md:justify-center md:items-center md:text-left"
+      >
+        <motion.div
+          className="illustration hidden md:block"
+          animate={animationLeft}
+        >
           <img
             src="https://i.ibb.co/XSrjqCb/Web-Developer-Flatline.png"
             alt="Developer illustration"
+            className="w-96 lg:w-[400px] xl:w-[450px]"
           />
         </motion.div>
-        <motion.div className="about-details-wrapper" animate={animationRight}>
+        <motion.div
+          className="about-details-wrapper flex flex-col justify-center items-center md:items-start mt-12 md:mt-0 p-7 max-w-md mx-auto md:mx-0"
+          animate={animationRight}
+        >
           <img
             src="https://i.ibb.co/M7yRxfv/mdi-hand-wave-outline.png"
             alt="waving icon"
+            className="animate-wave origin-[10%_70%]"
           />
-          <p>
+          <p className="text-white text-sm font-medium my-2 lg:text-lg">
             My name is Zulfa Fatah Akbar Ahmad, you can call me Abam. I am 20
             years old and a third-year student of Computer Engineering at
             Diponegoro University, Indonesia. Currently focusing on my goal to
             become a Front-end Developer.
           </p>
-          <div className="links">
-            <Link to="/fullprofile">
+          <div className="links mt-12">
+            <Link
+              to="/fullprofile"
+              className="text-white flex justify-center items-center gap-4 transition-all hover:text-blue-light"
+            >
               Read More <AiOutlineArrowRight />
             </Link>
             {/* <a
