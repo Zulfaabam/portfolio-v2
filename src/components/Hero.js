@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import TopNav from './TopNav'
 
 export default function Hero() {
   const title = `Hello, I'm Abam`
@@ -42,17 +43,7 @@ export default function Hero() {
       className="header bg-hero-light dark:bg-hero-dark bg-cover bg-top md:bg-left w-full h-[450px] xl:h-[750px] py-5 sm:py-10 xl:py-20 text-center sm:text-left"
       id="header"
     >
-      <motion.div
-        className="theme-changer absolute right-[10%] xl:right-[15%] 2xl:right-[20%] bg-btn-light dark:bg-btn-dark bg-cover w-[30px] aspect-square cursor-pointer transition-all"
-        initial={{ y: '-100vh' }}
-        animate={{ y: 0 }}
-        transition={{
-          type: 'spring',
-        }}
-        onClick={() => {
-          document.documentElement.classList.toggle('dark')
-        }}
-      ></motion.div>
+      <TopNav />
       <div className="intro-wrapper h-full flex flex-col sm:flex-row-reverse justify-center items-center sm:gap-4 md:gap-6 lg:gap-12">
         <motion.div
           className="intro-img flex justify-center items-center"
@@ -72,7 +63,7 @@ export default function Hero() {
         </motion.div>
         <div className="intro-info p-8 sm:p-0 flex flex-col gap-1 sm:items-start">
           <motion.h1
-            className="title text-white font-bold text-4xl md:text-5xl lg:text-6xl"
+            className="title"
             initial="hidden"
             animate="visible"
             variants={sentence}
