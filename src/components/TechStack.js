@@ -59,6 +59,7 @@ const Tools = ({ image, alt, title, className, animation }) => {
     <motion.div
       className="tools-box bg-sky-100 dark:bg-white flex justify-center items-center rounded-xl m-2 w-[65px] lg:w-[75px] aspect-square shadow-lg dark:shadow-dark"
       animate={animation}
+      whileHover={{ translateY: '-0.25rem' }}
     >
       <img
         src={image}

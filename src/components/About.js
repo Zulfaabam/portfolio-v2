@@ -79,7 +79,7 @@ export default function About() {
           <div className="links mt-12">
             <Link
               to="/fullprofile"
-              className="text-dark dark:text-white flex justify-center items-center gap-4 transition-all hover:text-blue dark:hover:text-blue-light"
+              className="text-dark dark:text-white flex justify-center items-center gap-4 transition-all hover:text-blue dark:hover:text-blue-light underline"
             >
               Read More <AiOutlineArrowRight />
             </Link>

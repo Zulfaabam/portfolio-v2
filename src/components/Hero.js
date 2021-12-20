@@ -39,7 +39,7 @@ export default function Hero() {
 
   return (
     <div
-      className="header bg-hero-light dark:bg-hero-dark bg-cover bg-top md:bg-left w-full h-[450px] xl:h-[800px] py-5 sm:py-10 xl:py-20 text-center sm:text-left"
+      className="header bg-hero-light dark:bg-hero-dark bg-cover bg-top md:bg-left w-full h-[450px] xl:h-[750px] py-5 sm:py-10 xl:py-20 text-center sm:text-left"
       id="header"
     >
       <motion.div
