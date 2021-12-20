@@ -32,7 +32,7 @@ export default function TechStack() {
   return (
     <div
       ref={ref}
-      className="tools bg-dark-accents-1 p-6 text-center flex flex-col justify-center items-center"
+      className="tools bg-white dark:bg-dark-accents-1 p-6 text-center flex flex-col justify-center items-center"
       id="tools"
     >
       <h2 className="subtitle">Tech Stack</h2>
@@ -57,7 +57,7 @@ export default function TechStack() {
 const Tools = ({ image, alt, title, className, animation }) => {
   return (
     <motion.div
-      className="tools-box bg-white flex justify-center items-center rounded-xl m-2 w-[65px] lg:w-[75px] aspect-square shadow-lg"
+      className="tools-box bg-sky-100 dark:bg-white flex justify-center items-center rounded-xl m-2 w-[65px] lg:w-[75px] aspect-square shadow-lg dark:shadow-dark"
       animate={animation}
     >
       <img

@@ -22,7 +22,7 @@ export default function Footer() {
           })}
         </div>
       </div>
-      <div className="footer-bottom bg-black text-center p-2">
+      <div className="footer-bottom bg-black text-center p-2 sm:p-4">
         <p className="text-[#6c757d] text-sm sm:text-base">
           &copy; Copyright 2021 | Created by{' '}
           <a

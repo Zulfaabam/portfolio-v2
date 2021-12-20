@@ -39,21 +39,21 @@ export default function Hero() {
 
   return (
     <div
-      className="header bg-hero-dark bg-cover bg-top md:bg-left w-full h-[450px] xl:h-[600px] py-5 sm:py-10 xl:py-20 text-center sm:text-left"
+      className="header bg-hero-light dark:bg-hero-dark bg-cover bg-top md:bg-left w-full h-[450px] xl:h-[800px] py-5 sm:py-10 xl:py-20 text-center sm:text-left"
       id="header"
     >
       <motion.div
-        className="theme-changer absolute right-[10%] xl:right-[15%] 2xl:right-[20%] bg-btn-dark bg-cover w-[30px] aspect-square cursor-pointer transition-all"
+        className="theme-changer absolute right-[10%] xl:right-[15%] 2xl:right-[20%] bg-btn-light dark:bg-btn-dark bg-cover w-[30px] aspect-square cursor-pointer transition-all"
         initial={{ y: '-100vh' }}
         animate={{ y: 0 }}
         transition={{
           type: 'spring',
         }}
         onClick={() => {
-          document.body.classList.toggle('light')
+          document.documentElement.classList.toggle('dark')
         }}
       ></motion.div>
-      <div className="intro-wrapper h-full flex flex-col sm:flex-row-reverse justify-center items-center sm:gap-4 md:gap-6 lg:gap-8">
+      <div className="intro-wrapper h-full flex flex-col sm:flex-row-reverse justify-center items-center sm:gap-4 md:gap-6 lg:gap-12">
         <motion.div
           className="intro-img flex justify-center items-center"
           initial={{ x: '100vw' }}

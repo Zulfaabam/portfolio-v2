@@ -43,7 +43,7 @@ export default function About() {
 
   return (
     <div
-      className="about bg-gradient-to-b from-dark to-dark-accents-1 w-full py-6 text-center overflow-hidden"
+      className="about bg-gradient-to-b from-white to-white dark:from-dark dark:to-dark-accents-1 w-full py-6 text-center overflow-hidden"
       id="about"
     >
       <h2 className="subtitle">About Me</h2>
@@ -70,7 +70,7 @@ export default function About() {
             alt="waving icon"
             className="animate-wave origin-[10%_70%]"
           />
-          <p className="text-white text-sm font-medium my-2 lg:text-lg">
+          <p className="text-dark dark:text-white text-sm font-medium my-2 lg:text-lg">
             My name is Zulfa Fatah Akbar Ahmad, you can call me Abam. I am 20
             years old and a third-year student of Computer Engineering at
             Diponegoro University, Indonesia. Currently focusing on my goal to
@@ -79,7 +79,7 @@ export default function About() {
           <div className="links mt-12">
             <Link
               to="/fullprofile"
-              className="text-white flex justify-center items-center gap-4 transition-all hover:text-blue-light"
+              className="text-dark dark:text-white flex justify-center items-center gap-4 transition-all hover:text-blue dark:hover:text-blue-light"
             >
               Read More <AiOutlineArrowRight />
             </Link>

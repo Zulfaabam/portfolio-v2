@@ -1,5 +1,6 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -7,8 +8,11 @@ module.exports = {
       },
       backgroundImage: {
         'hero-dark': "url('svgs/Polygon-0.2s-1600px-2.svg')",
+        'hero-light': "url('svgs/Polygon-0.2s-1600px-2-light.svg')",
         'btn-dark': "url('svgs/icon-sun.svg')",
+        'btn-light': "url('svgs/icon-moon.svg')",
         'work-dark': "url('svgs/curve-line.svg')",
+        'work-light': "url('svgs/curve-line-light.svg')",
       },
       colors: {
         blue: '#0070f3',

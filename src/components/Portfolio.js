@@ -32,7 +32,7 @@ export default function Portfolio() {
   return (
     <div
       ref={ref}
-      className="portfolio bg-work-dark bg-cover w-full py-6 mb-[-1px] overflow-hidden"
+      className="portfolio bg-work-light dark:bg-work-dark bg-cover w-full py-6 mb-[-1px] overflow-hidden"
       id="portfolio"
     >
       <h2 className="subtitle">My Latest Works</h2>
@@ -59,9 +59,9 @@ export default function Portfolio() {
 
 const Box = ({ image, alt, title, live, git }) => {
   return (
-    <div className="box w-80 lg:w-96 xl:w-[448px] h-auto m-4 bg-gray text-white rounded-xl">
+    <div className="box w-80 lg:w-96 xl:w-[448px] 2xl:w-[512px] h-auto m-4 bg-gray text-white rounded-xl shadow-lg dark:shadow-dark">
       <img
-        className="img-fluid rounded-t-xl h-40 lg:w-96 xl:w-[448px] lg:h-48 xl:h-56"
+        className="img-fluid rounded-t-xl h-40 lg:w-96 xl:w-[448px] 2xl:w-[512px] lg:h-48 xl:h-56 2xl:h-64"
         src={image}
         alt={alt}
         title={title}
