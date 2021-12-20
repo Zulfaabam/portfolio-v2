@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Footer from './Footer'
-import '../Profile.css'
-import { dataLists } from './Lists'
+import Footer from '../components/Footer'
+import './Profile.css'
+import { dataLists } from '../components/Lists'
 
 export default function FullProfile() {
   return (

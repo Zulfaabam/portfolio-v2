@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero from './Hero'
-import Main from './Main'
-import Footer from './Footer'
+import Hero from '../components/Hero'
+import Main from '../components/Main'
+import Footer from '../components/Footer'
 import { motion } from 'framer-motion'
 
 export default function Homepage() {
