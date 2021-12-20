@@ -20,3 +20,7 @@
     @apply relative pr-8 pl-10 mb-4 before:absolute before:top-[5px] before:left-[5px] before:w-4 before:h-4 before:bg-white before:border-4 before:border-blue-light before:rounded-full before:z-10;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
