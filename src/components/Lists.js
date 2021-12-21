@@ -1,5 +1,13 @@
 export const imgLists = [
   {
+    title: 'Pokédex',
+    image:
+      'https://i.ibb.co/cTJMLTP/Screenshot-2021-12-21-at-10-13-05-Pok-dex.png',
+    alt: 'pokédex image',
+    live: 'https://pokedex-abams.vercel.app/',
+    git: 'https://github.com/Zulfaabam/pokedex.git',
+  },
+  {
     title: 'crowdfunding',
     image: 'https://i.ibb.co/b2TJzvH/crowdfunding-screenshot.png',
     alt: 'crowdfunding image',
