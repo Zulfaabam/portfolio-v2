@@ -13,7 +13,7 @@
   }
 
   .theme-changer {
-    @apply ml-auto bg-btn-light dark:bg-btn-dark bg-cover w-[30px] aspect-square cursor-pointer transition-all;
+    @apply ml-auto text-dark dark:text-white w-[30px] aspect-square cursor-pointer transition-all;
   }
 
   .circles {

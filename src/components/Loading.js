@@ -1,10 +1,10 @@
 import React from 'react'
-import { SpinnerDotted } from 'spinners-react'
+import { BarLoader } from 'react-spinners'
 
 export default function Loading() {
   return (
-    <div className="bg-[#111] w-full h-screen flex justify-center items-center ">
-      <SpinnerDotted color="#0071f398" />
+    <div className="bg-white dark:bg-dark w-full h-screen flex justify-center items-center ">
+      <BarLoader color="#00c6fb" />
     </div>
   )
 }

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { motion } from 'framer-motion'
+import { FaSun, FaMoon } from 'react-icons/fa'
+import { ThemeContext } from './ThemeContext'
 
 export default function TopNav() {
+  const { theme, setTheme } = useContext(ThemeContext)
   return (
     <div className="topnav w-full h-24 fixed top-0 left-0 px-4">
       <div className="max-w-5xl mx-auto h-full flex items-center">
@@ -12,10 +15,22 @@ export default function TopNav() {
           transition={{
             type: 'spring',
           }}
-          onClick={() => {
-            document.documentElement.classList.toggle('dark')
-          }}
-        ></motion.div>
+          // onClick={() => {
+          //   document.documentElement.classList.toggle('dark')
+          // }}
+        >
+          {theme === 'dark' ? (
+            <FaSun
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+            />
+          ) : (
+            <FaMoon
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+            />
+          )}
+        </motion.div>
       </div>
     </div>
   )
