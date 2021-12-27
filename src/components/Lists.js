@@ -1,5 +1,13 @@
 export const imgLists = [
   {
+    title: 'Oishi-so',
+    image:
+      'https://github.com/Zulfaabam/oishi-so/blob/master/public/Screenshot_Oishi-so.png?raw=true',
+    alt: 'oishi-so image',
+    live: 'https://oishi-so.vercel.app/',
+    git: 'https://github.com/Zulfaabam/oishi-so.git',
+  },
+  {
     title: 'Pokédex',
     image:
       'https://i.ibb.co/cTJMLTP/Screenshot-2021-12-21-at-10-13-05-Pok-dex.png',
