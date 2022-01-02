@@ -18,10 +18,9 @@ module.exports = {
         blue: '#0070f3',
         'blue-light': '#00c6fb',
         cyan: '#50e3c2',
-        gray: '#212121',
-        'gray-light': '#d3dce6',
-        dark: '#111',
-        'dark-accents-1': '#28292f',
+        dark: '#0F172A',
+        'dark-gray': '#1e2938',
+        darker: '#0B1120',
       },
       animation: {
         wave: 'wave 2.5s infinite',

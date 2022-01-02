@@ -22,12 +22,12 @@ export default function TopNav() {
           {theme === 'dark' ? (
             <FaSun
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+              className="text-white text-2xl cursor-pointer"
             />
           ) : (
             <FaMoon
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+              className="text-dark-gray text-2xl cursor-pointer"
             />
           )}
         </motion.div>

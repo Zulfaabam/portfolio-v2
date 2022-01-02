@@ -43,7 +43,7 @@ export default function About() {
 
   return (
     <div
-      className="about bg-gradient-to-b from-white to-white dark:from-dark dark:to-dark-accents-1 w-full py-6 text-center overflow-hidden"
+      className="about bg-white dark:bg-dark w-full py-6 text-center overflow-hidden"
       id="about"
     >
       <h2 className="subtitle">About Me</h2>

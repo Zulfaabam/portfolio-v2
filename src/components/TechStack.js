@@ -32,7 +32,7 @@ export default function TechStack() {
   return (
     <div
       ref={ref}
-      className="tools bg-white dark:bg-dark-accents-1 p-6 text-center flex flex-col justify-center items-center"
+      className="tools bg-white dark:bg-dark p-6 text-center flex flex-col justify-center items-center"
       id="tools"
     >
       <h2 className="subtitle">Tech Stack</h2>

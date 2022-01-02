@@ -46,7 +46,7 @@ export default function FullProfile() {
               <div className="px-2">
                 <h3 className="dark:text-white text-base ">2019 - Now</h3>
                 <p className="dark:text-white my-2 text-sm font-medium">
-                  Computer Engineering, Diponegoro University, GPA: 3,92
+                  Computer Engineering, Diponegoro University, GPA: 3,86
                 </p>
               </div>
             </div>

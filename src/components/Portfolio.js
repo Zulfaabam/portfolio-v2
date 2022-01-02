@@ -59,7 +59,7 @@ export default function Portfolio() {
 
 const Box = ({ image, alt, title, live, git }) => {
   return (
-    <div className="box w-80 lg:w-96 xl:w-[448px] 2xl:w-[512px] h-auto m-4 bg-gray text-white rounded-xl shadow-lg dark:shadow-dark  hover:-translate-y-1">
+    <div className="box w-80 lg:w-96 xl:w-[448px] 2xl:w-[512px] h-auto m-4 bg-dark-gray text-white rounded-xl shadow-lg shadow-gray-400 dark:shadow-none  hover:-translate-y-1">
       <img
         className="img-fluid rounded-t-xl h-40 lg:w-96 xl:w-[448px] 2xl:w-[512px] lg:h-48 xl:h-56 2xl:h-64"
         src={image}

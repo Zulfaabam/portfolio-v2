@@ -4,7 +4,7 @@ import { socmedLists } from './Lists'
 export default function Footer() {
   return (
     <div className="footer" id="footer">
-      <div className="footer-upper bg-gray text-center p-2 sm:p-4 sm:flex sm:justify-evenly sm:items-center ">
+      <div className="footer-upper bg-dark-gray text-center p-4 sm:flex sm:justify-evenly sm:items-center ">
         <p className="text-white text-sm sm:text-base">
           Connect with me on social media
         </p>
@@ -22,7 +22,7 @@ export default function Footer() {
           })}
         </div>
       </div>
-      <div className="footer-bottom bg-black text-center p-2 sm:p-4">
+      <div className="footer-bottom bg-darker text-center p-2 sm:p-4">
         <p className="text-[#6c757d] text-sm sm:text-base">
           &copy; Copyright 2021 | Created by{' '}
           <a
