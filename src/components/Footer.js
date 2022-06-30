@@ -1,9 +1,9 @@
-import React from 'react'
-import { socmedLists } from './Lists'
+import React from "react";
+import { socmedLists } from "./Lists";
 
 export default function Footer() {
   return (
-    <div className="footer" id="footer">
+    <div className="footer fixed bottom-0 left-0 right-0 w-full" id="footer">
       <div className="footer-upper bg-dark-gray text-center p-4 sm:flex sm:justify-evenly sm:items-center ">
         <p className="text-white text-sm sm:text-base">
           Connect with me on social media
@@ -18,13 +18,13 @@ export default function Footer() {
                 alt={socmedList.alt}
                 link={socmedList.link}
               />
-            )
+            );
           })}
         </div>
       </div>
       <div className="footer-bottom bg-darker text-center p-2 sm:p-4">
         <p className="text-[#6c757d] text-sm sm:text-base">
-          &copy; Copyright 2021 | Created by{' '}
+          Latest Update June 2022 | Created by{" "}
           <a
             href="#header"
             className="text-white transition-all hover:text-blue-light"
@@ -34,7 +34,7 @@ export default function Footer() {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
 const Socmed = ({ link, image, alt, title }) => {
@@ -47,5 +47,5 @@ const Socmed = ({ link, image, alt, title }) => {
         className="w-6 transition-all mt-2 sm:mt-0 hover:scale-125"
       />
     </a>
-  )
-}
+  );
+};

@@ -1,45 +1,45 @@
-import React, { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { Link } from 'react-router-dom'
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 export default function About() {
   const { ref, inView } = useInView({
     threshold: 0.5,
-    triggerOnce: true,
-  })
-  const animationLeft = useAnimation()
-  const animationRight = useAnimation()
+    triggerOnce: true
+  });
+  const animationLeft = useAnimation();
+  const animationRight = useAnimation();
 
   useEffect(() => {
-    console.log(inView)
+    console.log(inView);
     if (inView) {
       animationLeft.start({
         x: 0,
         transition: {
-          type: 'spring',
+          type: "spring",
           duration: 1.5,
-          bounce: 0.3,
-        },
-      })
+          bounce: 0.3
+        }
+      });
       animationRight.start({
         x: 0,
         transition: {
-          type: 'spring',
+          type: "spring",
           duration: 1.5,
-          bounce: 0.3,
-        },
-      })
+          bounce: 0.3
+        }
+      });
     } else if (!inView) {
       animationLeft.start({
-        x: '-100vw',
-      })
+        x: "-100vw"
+      });
       animationRight.start({
-        x: '100vw',
-      })
+        x: "100vw"
+      });
     }
-  }, [inView, animationLeft, animationRight])
+  }, [inView, animationLeft, animationRight]);
 
   return (
     <div
@@ -71,28 +71,30 @@ export default function About() {
             className="animate-wave origin-[10%_70%]"
           />
           <p className="text-dark dark:text-white text-sm font-medium my-2 lg:text-lg">
-            My name is Zulfa Fatah Akbar Ahmad, you can call me Abam. I am 20
-            years old and a third-year student of Computer Engineering at
-            Diponegoro University, Indonesia. Currently focusing on my goal to
-            become a Front-end Developer.
+            My name is Zulfa Fatah Akbar Ahmad, you can call me Abam. I am 21
+            years old and a final-year student of Computer Engineering at
+            Diponegoro University, Indonesia. Currently working as a part-time
+            Front-end Developer at{" "}
+            <a
+              href="https://www.bukitvista.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-orange-600 dark:text-orange-400 transition-all hover:text-blue dark:hover:text-blue-light underline"
+            >
+              Bukit Vista
+            </a>{" "}
+            specialize in React JS and Redux.
           </p>
           <div className="links mt-12">
             <Link
-              to="/fullprofile"
-              className="text-dark dark:text-white flex justify-center items-center gap-4 transition-all hover:text-blue dark:hover:text-blue-light underline"
+              to="/full-profile"
+              className="text-dark dark:text-white flex justify-center items-center gap-1 transition-all hover:text-blue dark:hover:text-blue-light underline"
             >
               Read More <AiOutlineArrowRight />
             </Link>
-            {/* <a
-              href="https://drive.google.com/file/d/1Wszn1CkqDRylc5-IkwNGG6AU6lV0Tp5I/view?usp=sharing"
-              target="_blank"
-              rel="noreferrer"
-            >
-              CV
-            </a> */}
           </div>
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
