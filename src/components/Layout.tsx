@@ -1,15 +1,20 @@
-import React from "react";
-import Footer from "./Footer";
-import TopNav from "./TopNav";
+import React from 'react';
+import Footer from './Footer';
+import TopNav from './TopNav';
 
-export default function Layout({ children, home }) {
+export interface LayoutProps {
+  children: React.ReactNode;
+  isHome?: boolean;
+}
+
+export default function Layout({ children, isHome }: LayoutProps) {
   return (
     <div
       className={`w-full h-full ${
-        !home ? "pt-20" : ""
+        !isHome ? 'pt-20' : ''
       } pb-28 bg-white dark:bg-dark bg-cover bg-center transition-all`}
     >
-      {!home ? <TopNav /> : null}
+      {!isHome ? <TopNav /> : null}
       <main>{children}</main>
       <Footer />
     </div>

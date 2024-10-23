@@ -25,7 +25,7 @@ export default function Homepage() {
       exit={{ x: '-100vw' }}
       transition={{ duration: 0.5 }}
     >
-      <Layout home>
+      <Layout isHome>
         <Hero />
         <Main />
       </Layout>

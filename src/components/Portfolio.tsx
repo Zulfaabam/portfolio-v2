@@ -1,8 +1,14 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { imgLists } from './Lists';
 import { useInView } from 'react-intersection-observer';
 import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs';
+import { ImageProps } from '../Dto/commonDto';
+
+export interface BoxProps extends ImageProps {
+  live: string;
+  git: string;
+}
 
 export default function Portfolio() {
   const { ref, inView } = useInView({
@@ -44,7 +50,7 @@ export default function Portfolio() {
             <Box
               key={index}
               title={imgList.title}
-              image={imgList.image}
+              src={imgList.src}
               alt={imgList.alt}
               live={imgList.live}
               git={imgList.git}
@@ -56,12 +62,12 @@ export default function Portfolio() {
   );
 }
 
-const Box = ({ image, alt, title, live, git }) => {
+const Box = ({ src, alt, title, live, git }: BoxProps) => {
   return (
     <div className='box w-80 lg:w-96 xl:w-[448px] 2xl:w-[512px] h-auto m-4 bg-dark-gray text-white rounded-xl shadow-lg shadow-gray-400 dark:shadow-none  hover:-translate-y-1'>
       <img
         className='img-fluid rounded-t-xl h-40 lg:w-96 xl:w-[448px] 2xl:w-[512px] lg:h-48 xl:h-56 2xl:h-64'
-        src={image}
+        src={src}
         alt={alt}
         title={title}
       />

@@ -12,7 +12,6 @@ export default function App() {
       <AnimatePresence mode='wait' initial={true}>
         <ScrollToTop />
         <Routes location={location} key={location.pathname}>
-          {/* <Route path="/" element={<Navigate replace to="/" />} /> */}
           <Route path='/' element={<Homepage />} />
           <Route path='/full-profile' element={<FullProfile />} />
         </Routes>
