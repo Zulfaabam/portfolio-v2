@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <div className='App'>
-      <AnimatePresence exitBeforeEnter initial={true}>
+      <AnimatePresence mode='wait' initial={true}>
         <ScrollToTop />
         <Routes location={location} key={location.pathname}>
           {/* <Route path="/" element={<Navigate replace to="/" />} /> */}
