@@ -13,9 +13,9 @@ export default function Hero() {
       opacity: 1,
       transition: {
         delay: 0.5,
-        staggerChildren: 0.08
-      }
-    }
+        staggerChildren: 0.08,
+      },
+    },
   };
 
   const sentence2 = {
@@ -24,17 +24,17 @@ export default function Hero() {
       opacity: 1,
       transition: {
         delay: 0.5,
-        staggerChildren: 0.02
-      }
-    }
+        staggerChildren: 0.02,
+      },
+    },
   };
 
   const letter = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
-      y: 0
-    }
+      y: 0,
+    },
   };
 
   return (
@@ -50,7 +50,7 @@ export default function Hero() {
           animate={{ x: 0 }}
           transition={{
             type: "spring",
-            duration: 1.5
+            duration: 1.5,
           }}
         >
           <img
@@ -60,7 +60,7 @@ export default function Hero() {
             className="w-[175px] sm:w-[200px] md:w-56 lg:w-72 xl:w-96"
           />
         </motion.div>
-        <div className="intro-info p-8 sm:p-0 flex flex-col gap-2 sm:items-start">
+        <div className="intro-info p-8 sm:p-0 flex flex-col gap-2 sm:items-start font-zen-old-mincho">
           <motion.h1
             className="title"
             initial="hidden"

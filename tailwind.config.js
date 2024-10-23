@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        'zen-old-mincho': ['Zen Old Mincho', 'serif'],
       },
       backgroundImage: {
         'hero-dark': "url('svgs/Polygon-0.2s-1600px-2.svg')",
@@ -56,4 +57,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
