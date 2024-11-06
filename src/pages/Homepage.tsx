@@ -1,9 +1,9 @@
 // import { useEffect, useState } from 'react';
-import Hero from '../app/components/Hero';
-import Main from '../app/components/Main';
+import Hero from '../components/Hero';
+import Main from '../components/Main';
 import { motion } from 'framer-motion';
 // import Loading from '../app/components/Loading';
-import Layout from '../app/components/Layout';
+import Layout from '../components/Layout';
 
 export default function Homepage() {
   // const [loading, setLoading] = useState(true);

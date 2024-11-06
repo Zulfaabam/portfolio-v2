@@ -1,4 +1,4 @@
-import { ImageProps } from '../../Dto/commonDto';
+import { ImageProps } from '../dto/commonDto';
 import { socmedLists } from './Lists';
 
 export interface SocmedProps extends ImageProps {

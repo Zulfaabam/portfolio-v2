@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.11.9",
     "next": "^15.0.2",
     "normalize.css": "^8.0.1",
@@ -16,6 +17,7 @@
     "react-intersection-observer": "^8.32.1",
     "react-router-dom": "^6.0.2",
     "react-spinners": "^0.14.1",
+    "tailwind-merge": "^2.5.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

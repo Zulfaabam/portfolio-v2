@@ -1,10 +1,17 @@
+const {
+  default: flattenColorPalette,
+} = require('tailwindcss/lib/util/flattenColorPalette');
+
+/** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        pacifico: ['Pacifico', 'cursive'],
+        outfit: ['Outfit', 'sans-serif'],
       },
       backgroundImage: {
         'hero-dark': "url('svgs/Polygon-0.2s-1600px-2.svg')",
@@ -21,6 +28,11 @@ export default {
         dark: '#0F172A',
         'dark-gray': '#1e2938',
         darker: '#0B1120',
+        primary: '#76C1FF',
+        secondary: '#133d9e',
+        accent: '#00f9e9',
+        text: '#eaf0f5',
+        bg: '#171717',
       },
       animation: {
         wave: 'wave 2.5s infinite',
@@ -55,5 +67,17 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 };
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme('colors'));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ':root': newVars,
+  });
+}

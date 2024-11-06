@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { imgLists } from './Lists';
 import { useInView } from 'react-intersection-observer';
 import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs';
-import { ImageProps } from '../../Dto/commonDto';
+import { ImageProps } from '../dto/commonDto';
 
 export interface BoxProps extends ImageProps {
   live: string;
