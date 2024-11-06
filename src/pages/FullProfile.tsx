@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { dataLists } from '../components/Lists';
 import Layout from '../components/Layout';
-import { Link } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import Stepper from '../components/Stepper';
+import Link from 'next/link';
 
 export interface DataProps {
   content: string;
@@ -29,7 +29,7 @@ export default function FullProfile() {
       <Layout>
         <div className='resume-wrapper flex flex-col justify-center px-4 overflow-hidden max-w-3xl mx-auto relative'>
           <Link
-            to='/'
+            href={'/'}
             className='text-dark dark:text-white flex items-center gap-1 transition-all hover:text-blue dark:hover:text-blue-light underline absolute top-4'
           >
             <AiOutlineArrowLeft /> Home

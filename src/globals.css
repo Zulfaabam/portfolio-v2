@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap'); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .title {
+  /* .title {
     @apply text-white font-bold text-4xl md:text-5xl lg:text-6xl;
   }
 
@@ -19,7 +18,7 @@
 
   .circles {
     @apply relative pr-8 pl-10 mb-4 before:absolute before:top-[5px] before:left-[5px] before:w-4 before:h-4 before:bg-white before:border-4 before:border-blue-light before:rounded-full before:z-10;
-  }
+  } */
 }
 
 html {

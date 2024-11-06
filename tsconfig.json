@@ -19,7 +19,11 @@
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "baseUrl": "src/",
     "paths": {
       "@/lib/*": ["lib/*"],
@@ -27,6 +31,12 @@
       "@/dto/*": ["dto/*"]
     }
   },
-  "include": ["src", "./dist/types/**/*.ts", "./next-env.d.ts"],
+  "include": [
+    // "./dist/types/**/*.ts",
+    "./next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["./node_modules"]
 }

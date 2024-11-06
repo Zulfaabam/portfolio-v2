@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import Link from 'next/link';
 
 export default function About() {
   const { ref, inView } = useInView({
@@ -86,7 +86,7 @@ export default function About() {
           </p>
           <div className='links mt-12'>
             <Link
-              to='/full-profile'
+              href='/full-profile'
               className='text-dark dark:text-white flex justify-center items-center gap-1 transition-all hover:text-blue dark:hover:text-blue-light underline'
             >
               Read More <AiOutlineArrowRight />
