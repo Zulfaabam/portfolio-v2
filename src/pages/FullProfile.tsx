@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { dataLists } from '../components/Lists';
-import Layout from '../components/Layout';
+import { dataLists } from '../app/components/Lists';
+import Layout from '../app/components/Layout';
 import { Link } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import Stepper from '../components/Stepper';
+import Stepper from '../app/components/Stepper';
 
 export interface DataProps {
   content: string;

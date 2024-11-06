@@ -2,7 +2,7 @@ import Homepage from './pages/Homepage';
 import FullProfile from './pages/FullProfile';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './app/components/ScrollToTop';
 
 export default function App() {
   const location = useLocation();

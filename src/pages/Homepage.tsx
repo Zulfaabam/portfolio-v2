@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react';
-import Hero from '../components/Hero';
-import Main from '../components/Main';
+// import { useEffect, useState } from 'react';
+import Hero from '../app/components/Hero';
+import Main from '../app/components/Main';
 import { motion } from 'framer-motion';
-import Loading from '../components/Loading';
-import Layout from '../components/Layout';
+// import Loading from '../app/components/Loading';
+import Layout from '../app/components/Layout';
 
 export default function Homepage() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <motion.div

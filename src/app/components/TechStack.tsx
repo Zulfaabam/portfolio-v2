@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { toolLists } from './Lists';
 import { AnimationControls, motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ImageProps } from '../Dto/commonDto';
+import { ImageProps } from '../../Dto/commonDto';
 
 export interface ToolsProps extends ImageProps {
   className: string;
