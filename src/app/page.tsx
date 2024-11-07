@@ -1,11 +1,13 @@
-import Hero from '@/components/Hero';
-import { fontPacifico } from '@/lib/fonts';
+import About from '@/components/about';
+import Hero from '@/components/hero';
 
 export default function Homepage() {
   return (
-    <div>
+    <>
       <Hero />
-      <h1 className={`${fontPacifico}`}>test tailwind</h1>
-    </div>
+      <div className='w-full bg-gradient-to-b from-dark via-dark to-black'>
+        <About />
+      </div>
+    </>
   );
 }

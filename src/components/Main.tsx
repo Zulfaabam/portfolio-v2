@@ -1,5 +1,5 @@
 import Portfolio from './Portfolio';
-import About from './About';
+import About from './about';
 import TechStack from './TechStack';
 
 export default function Main() {

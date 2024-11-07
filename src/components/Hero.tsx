@@ -13,7 +13,7 @@ export default function Hero() {
         animate={{ scaleY: 1 }}
         className='relative z-10 flex w-full flex-col items-center justify-center gap-3 md:gap-4'
       >
-        <h3 className={`${fontPacifico} text-base text-fg md:text-[1.5rem]`}>
+        <h3 className={`${fontPacifico} text-base text-fg md:text-2xl`}>
           Hi, I am Abam
         </h3>
         <h2 className='relative mx-auto max-w-5xl bg-gradient-to-b from-neutral-800 via-white to-white bg-clip-text text-center text-3xl font-medium tracking-tight text-transparent md:text-5xl md:leading-tight'>

@@ -1,99 +1,106 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import Link from 'next/link';
+import Section from './section';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { IconDownload } from '@tabler/icons-react';
 
 export default function About() {
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
-  });
-  const animationLeft = useAnimation();
-  const animationRight = useAnimation();
+  // const { ref, inView } = useInView({
+  //   threshold: 0.5,
+  //   triggerOnce: true,
+  // });
+  // const animationLeft = useAnimation();
+  // const animationRight = useAnimation();
 
-  useEffect(() => {
-    if (inView) {
-      animationLeft.start({
-        x: 0,
-        transition: {
-          type: 'spring',
-          duration: 1.5,
-          bounce: 0.3,
-        },
-      });
-      animationRight.start({
-        x: 0,
-        transition: {
-          type: 'spring',
-          duration: 1.5,
-          bounce: 0.3,
-        },
-      });
-    } else if (!inView) {
-      animationLeft.start({
-        x: '-100vw',
-      });
-      animationRight.start({
-        x: '100vw',
-      });
-    }
-  }, [inView, animationLeft, animationRight]);
+  // useEffect(() => {
+  //   if (inView) {
+  //     animationLeft.start({
+  //       x: 0,
+  //       transition: {
+  //         type: 'spring',
+  //         duration: 1.5,
+  //         bounce: 0.3,
+  //       },
+  //     });
+  //     animationRight.start({
+  //       x: 0,
+  //       transition: {
+  //         type: 'spring',
+  //         duration: 1.5,
+  //         bounce: 0.3,
+  //       },
+  //     });
+  //   } else if (!inView) {
+  //     animationLeft.start({
+  //       x: '-100vw',
+  //     });
+  //     animationRight.start({
+  //       x: '100vw',
+  //     });
+  //   }
+  // }, [inView, animationLeft, animationRight]);
+
+  const boxClasses = 'rounded-2xl bg-primary p-5 bg-opacity-10';
 
   return (
-    <div
-      className='about bg-white dark:bg-dark w-full py-6 text-center overflow-hidden'
-      id='about'
-    >
-      <h2 className='subtitle'>About Me</h2>
-      <div
-        ref={ref}
-        className='about-wrapper w-full flex md:justify-center md:items-center md:text-left'
-      >
-        <motion.div
-          className='illustration hidden md:block'
-          animate={animationLeft}
-        >
-          <img
-            src='https://i.ibb.co/XSrjqCb/Web-Developer-Flatline.png'
-            alt='Developer illustration'
-            className='w-96 lg:w-[400px] xl:w-[450px]'
-          />
-        </motion.div>
-        <motion.div
-          className='about-details-wrapper flex flex-col justify-center items-center md:items-start mt-12 md:mt-0 p-7 max-w-md mx-auto md:mx-0'
-          animate={animationRight}
-        >
-          <img
-            src='https://i.ibb.co/M7yRxfv/mdi-hand-wave-outline.png'
-            alt='waving icon'
-            className='animate-wave origin-[10%_70%]'
-          />
-          <p className='text-dark dark:text-white text-sm font-medium my-2 lg:text-lg'>
-            My name is Zulfa Fatah Akbar Ahmad, you can call me Abam. I am 21
-            years old and a final-year student of Computer Engineering at
-            Diponegoro University, Indonesia. Currently working as a part-time
-            Front-end Developer at{' '}
-            <a
-              href='https://www.bukitvista.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-orange-600 dark:text-orange-400 transition-all hover:text-blue dark:hover:text-blue-light underline'
-            >
-              Bukit Vista
-            </a>{' '}
-            specialize in React JS and Redux.
-          </p>
-          <div className='links mt-12'>
-            <Link
-              href='/full-profile'
-              className='text-dark dark:text-white flex justify-center items-center gap-1 transition-all hover:text-blue dark:hover:text-blue-light underline'
-            >
-              Read More <AiOutlineArrowRight />
-            </Link>
-          </div>
-        </motion.div>
+    <Section id='about' className='grid w-full grid-cols-12 gap-6 text-fg'>
+      <div className={cn('col-start-1 col-end-5', boxClasses)}>
+        <div className='mx-auto flex aspect-square w-[250px] flex-col items-center justify-center'>
+          <h6 className='text-2xl font-medium'>My Tech Stack</h6>
+          <p>I constantly try to improve</p>
+        </div>
       </div>
-    </div>
+      <div
+        className={cn('col-start-5 col-end-10 flex flex-col gap-3', boxClasses)}
+      >
+        <div className='aspect-square w-20 rounded-full bg-gray-400'>
+          {/* <Image
+            src='https://i.ibb.co/R4pTgPX/abam-rounded.png'
+            alt='abam'
+            fill
+          /> */}
+        </div>
+        <p className='text-justify text-base lg:text-xl'>
+          Name’s Zulfa Fatah Akbar Ahmad. You can call me Abam. I have 2+ years
+          of experience as a Frontend Developer.
+        </p>
+        <a
+          className='mt-auto flex items-center gap-1 text-primary'
+          href=''
+          download
+        >
+          <IconDownload /> Download CV
+        </a>
+      </div>
+      <div
+        className={cn(
+          'col-start-10 col-end-13 rounded-2xl bg-secondary bg-opacity-30 p-5',
+        )}
+      >
+        a
+      </div>
+      <div className={cn('col-start-1 col-end-8', boxClasses)}>
+        <p className='text-justify text-base lg:text-xl [&_span]:text-primary'>
+          I build primarily with <span>React</span>, <span>Next.js</span>, and{' '}
+          <span>TailwindCSS</span>. I build reactive, progressive, responsive,
+          and most importantly cool websites (also mobile apps using{' '}
+          <span>React Native</span> 🤫)
+        </p>
+      </div>
+      <div
+        className={cn(
+          'col-start-8 col-end-13 flex items-center justify-center',
+          boxClasses,
+        )}
+      >
+        <p className='text-base lg:text-xl'>
+          🌱 Currently learning: Vue and Angular
+        </p>
+      </div>
+    </Section>
   );
 }

@@ -1,5 +1,5 @@
 // import { useEffect, useState } from 'react';
-import Hero from '../components/Hero';
+import Hero from '../components/hero';
 import Main from '../components/Main';
 import { motion } from 'framer-motion';
 // import Loading from '../app/components/Loading';
