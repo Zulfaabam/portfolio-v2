@@ -35,8 +35,8 @@ export default {
         primary: '#76C1FF',
         secondary: '#133d9e',
         accent: '#00f9e9',
-        text: '#eaf0f5',
-        bg: '#171717',
+        fg: '#eaf0f5',
+        dark: '#171717',
       },
       // animation: {
       //   wave: 'wave 2.5s infinite',
@@ -78,7 +78,7 @@ export default {
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme('colors'));
   let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
   );
 
   addBase({
