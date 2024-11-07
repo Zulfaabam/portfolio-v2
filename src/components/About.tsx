@@ -1,4 +1,5 @@
 // import { useEffect } from 'react';
+'use client';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { AiOutlineArrowRight } from 'react-icons/ai';
@@ -45,6 +46,15 @@ export default function About() {
   // }, [inView, animationLeft, animationRight]);
 
   const boxClasses = 'rounded-2xl bg-primary p-5 bg-opacity-10';
+
+  const techStack = [
+    { name: 'HTML', id: 1 },
+    { name: 'React', id: 2 },
+    { name: 'Next.js', id: 3 },
+    { name: 'Next.js', id: 4 },
+    { name: 'Next.js', id: 5 },
+    { name: 'Next.js', id: 6 },
+  ];
 
   return (
     <Section id='about' className='grid w-full grid-cols-12 gap-6 text-fg'>

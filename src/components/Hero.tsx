@@ -16,10 +16,10 @@ export default function Hero() {
         <h3 className={`${fontPacifico} text-base text-fg md:text-2xl`}>
           Hi, I am Abam
         </h3>
-        <h2 className='relative mx-auto max-w-5xl bg-gradient-to-b from-neutral-800 via-white to-white bg-clip-text text-center text-3xl font-medium tracking-tight text-transparent md:text-5xl md:leading-tight'>
+        <h1 className='relative mx-auto max-w-5xl bg-gradient-to-b from-neutral-800 via-white to-white bg-clip-text text-center text-3xl font-medium tracking-tight text-transparent md:text-5xl md:leading-tight'>
           <span>I make web, good web</span>
           <span className='text-yellow-300'>👍</span>
-        </h2>
+        </h1>
         <div className='mt-2'>
           <BorderMagicBtn
             onClick={() => console.log('hire me')}
