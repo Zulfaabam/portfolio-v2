@@ -2,6 +2,50 @@ import Link from 'next/link';
 import Section from './section';
 import { IconArrowRight } from '@tabler/icons-react';
 
+import ProjectCard, { ProjectCardProps } from './ui/project-card';
+
+const projects: ProjectCardProps[] = [
+  {
+    image: '',
+    title: 'Sunnyside',
+    desc: 'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    techStack: [
+      {
+        id: 1,
+        name: 'React',
+      },
+    ],
+    githubUrl: '',
+    liveUrl: '',
+  },
+  {
+    image: '',
+    title: 'Sunnyside 2',
+    desc: 'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    techStack: [
+      {
+        id: 1,
+        name: 'React',
+      },
+    ],
+    githubUrl: '',
+    liveUrl: '',
+  },
+  {
+    image: '',
+    title: 'Sunnyside 3',
+    desc: 'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    techStack: [
+      {
+        id: 1,
+        name: 'React',
+      },
+    ],
+    githubUrl: '',
+    liveUrl: '',
+  },
+];
+
 export default function FeaturedProjects() {
   return (
     <Section id='featured-projects' className='space-y-11'>
@@ -15,7 +59,9 @@ export default function FeaturedProjects() {
         </Link>
       </div>
       <div className='grid grid-cols-3 gap-6'>
-        <div className='rounded-2xl bg-fg p-4'>a</div>
+        {projects.map((p) => (
+          <ProjectCard key={p.title} {...p} />
+        ))}
       </div>
     </Section>
   );

@@ -8,6 +8,8 @@ import Section from './section';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { IconArrowRight, IconDownload } from '@tabler/icons-react';
+import { CSSProperties } from 'react';
+import Chip from './ui/chip';
 
 export default function About() {
   // const { ref, inView } = useInView({
@@ -71,26 +73,21 @@ export default function About() {
         </div>
         <div className='mt-auto flex flex-wrap-reverse justify-center gap-x-1 gap-y-2 px-[9px]'>
           {techStack.map((tech) => (
-            <div
+            <Chip
               key={tech.id}
-              className='w-fit rounded-lg bg-opacity-70 bg-gradient-to-br from-accent/70 via-[#3BDDF4]/70 to-primary/70 px-2 py-1 text-sm font-medium text-fg text-opacity-90'
-            >
-              {tech.name}
-            </div>
+              label={tech.name}
+              className='bg-opacity-70 bg-gradient-to-br from-accent/70 via-[#3BDDF4]/70 to-primary/70 text-sm font-medium text-fg text-opacity-90'
+            />
           ))}
         </div>
       </div>
       <div
         className={cn('col-start-5 col-end-10 flex flex-col gap-3', boxClasses)}
       >
-        <div className='aspect-square w-20 rounded-full bg-gray-400'>
-          {/* <Image
-            src='https://i.ibb.co/R4pTgPX/abam-rounded.png'
-            alt='abam'
-            fill
-          /> */}
+        <div className='relative h-20 w-20 rounded-full bg-gray-400'>
+          <Image src='/no-image.svg' alt='abam' fill />
         </div>
-        <p className='text-justify text-base lg:text-xl'>
+        <p className='mb-12 text-justify text-base lg:text-xl'>
           Name’s Zulfa Fatah Akbar Ahmad. You can call me Abam. I have 2+ years
           of experience as a Frontend Developer.
         </p>
@@ -108,12 +105,12 @@ export default function About() {
           'group relative col-start-10 col-end-13 flex cursor-pointer items-center justify-center rounded-2xl bg-secondary bg-opacity-30 p-5',
         )}
       >
-        <div className='group-hover:animate-spin-slow absolute transition-all duration-300'>
+        <div className='absolute transition-all duration-300 group-hover:animate-spin-slow'>
           <TextRing text='MY JOURNEY - MY JOURNEY - ' />
         </div>
         <IconArrowRight
           size={72}
-          className='group-hover:animate-bounce-horizontal text-fg transition-all duration-300 group-hover:text-accent'
+          className='text-fg transition-all duration-300 group-hover:animate-bounce-horizontal group-hover:text-accent'
         />
       </Link>
       <div className={cn('col-start-1 col-end-8', boxClasses)}>
@@ -146,16 +143,19 @@ export interface TextRingProps {
 const TextRing = ({ text, className }: TextRingProps) => {
   const CHARS = text.split('');
   const INNER_ANGLE = 360 / CHARS.length;
+
+  // Extend CSSProperties to allow custom properties
+  const style: CSSProperties & { '--total'?: number; '--radius'?: number } = {
+    '--total': CHARS.length,
+    '--radius': 1 / Math.sin(INNER_ANGLE / (180 / Math.PI)),
+  };
+
   return (
-    <span
-      className={cn('text-ring', className)}
-      style={{
-        '--total': CHARS.length,
-        '--radius': 1 / Math.sin(INNER_ANGLE / (180 / Math.PI)),
-      }}
-    >
+    <span className={cn('text-ring', className)} style={style}>
       {CHARS.map((char, index) => (
-        <span style={{ '--index': index }}>{char}</span>
+        <span key={index} style={{ '--index': index } as CSSProperties}>
+          {char}
+        </span>
       ))}
     </span>
   );

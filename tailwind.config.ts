@@ -17,6 +17,9 @@ export default {
         outfit: ['var(--font-outfit)'],
         pacifico: ['var(--font-pacifico)'],
       },
+      backgroundImage: {
+        'earth-from-space': 'url(/earth-from-space.png)',
+      },
       // backgroundImage: {
       //   'hero-dark': "url('svgs/Polygon-0.2s-1600px-2.svg')",
       //   'hero-light': "url('svgs/Polygon-0.2s-1600px-2-light.svg')",
