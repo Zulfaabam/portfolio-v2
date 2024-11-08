@@ -24,3 +24,22 @@
 html {
   scroll-behavior: smooth;
 }
+
+.text-ring {
+  --character-width: 1.25; /* In "ch" units */
+}
+
+.text-ring [style*='--index'] {
+  --inner-angle: calc((360 / var(--total)) * 1deg);
+  --radius: calc((var(--character-width, 1) / sin(var(--inner-angle))) * -1ch);
+  font-weight: 500;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+    rotate(calc(var(--inner-angle) * var(--index)))
+    translateY(var(--radius, -5ch));
+}

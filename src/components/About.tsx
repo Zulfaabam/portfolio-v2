@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Section from './section';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { IconDownload } from '@tabler/icons-react';
+import { IconArrowRight, IconDownload } from '@tabler/icons-react';
 
 export default function About() {
   // const { ref, inView } = useInView({
@@ -102,13 +102,20 @@ export default function About() {
           <IconDownload /> Download CV
         </a>
       </div>
-      <div
+      <Link
+        href='/journey'
         className={cn(
-          'col-start-10 col-end-13 rounded-2xl bg-secondary bg-opacity-30 p-5',
+          'group relative col-start-10 col-end-13 flex cursor-pointer items-center justify-center rounded-2xl bg-secondary bg-opacity-30 p-5',
         )}
       >
-        a
-      </div>
+        <div className='group-hover:animate-spin-slow absolute transition-all duration-300'>
+          <TextRing text='MY JOURNEY - MY JOURNEY - ' />
+        </div>
+        <IconArrowRight
+          size={72}
+          className='group-hover:animate-bounce-horizontal text-fg transition-all duration-300 group-hover:text-accent'
+        />
+      </Link>
       <div className={cn('col-start-1 col-end-8', boxClasses)}>
         <p className='text-justify text-base lg:text-xl [&_span]:text-primary'>
           I build primarily with <span>React</span>, <span>Next.js</span>, and{' '}
@@ -130,3 +137,26 @@ export default function About() {
     </Section>
   );
 }
+
+export interface TextRingProps {
+  text: string;
+  className?: string;
+}
+
+const TextRing = ({ text, className }: TextRingProps) => {
+  const CHARS = text.split('');
+  const INNER_ANGLE = 360 / CHARS.length;
+  return (
+    <span
+      className={cn('text-ring', className)}
+      style={{
+        '--total': CHARS.length,
+        '--radius': 1 / Math.sin(INNER_ANGLE / (180 / Math.PI)),
+      }}
+    >
+      {CHARS.map((char, index) => (
+        <span style={{ '--index': index }}>{char}</span>
+      ))}
+    </span>
+  );
+};

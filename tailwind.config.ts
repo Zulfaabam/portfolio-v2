@@ -38,6 +38,32 @@ export default {
         fg: '#eaf0f5',
         dark: '#171717',
       },
+      animation: {
+        'spin-slow': 'spin 6s linear infinite',
+        'reverse-spin-slow': 'reverse-spin 6s linear infinite',
+        'bounce-horizontal': 'bounce-horizontal 1s infinite',
+      },
+      keyframes: {
+        'reverse-spin': {
+          to: {
+            transform: 'rotate(-360deg)',
+          },
+        },
+        'bounce-horizontal': {
+          '0%': {
+            transform: 'translateX(10%)',
+            'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)',
+          },
+          '100%': {
+            transform: 'translateX(10%)',
+            'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)',
+          },
+          '50%': {
+            transform: 'translateX(0%)',
+            'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)',
+          },
+        },
+      },
       // animation: {
       //   wave: 'wave 2.5s infinite',
       // },
