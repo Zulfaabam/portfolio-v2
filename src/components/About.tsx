@@ -1,8 +1,5 @@
 // import { useEffect } from 'react';
 'use client';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { AiOutlineArrowRight } from 'react-icons/ai';
 import Link from 'next/link';
 import Section from './section';
 import { cn } from '@/lib/utils';
@@ -12,41 +9,6 @@ import { CSSProperties } from 'react';
 import Chip from './ui/chip';
 
 export default function About() {
-  // const { ref, inView } = useInView({
-  //   threshold: 0.5,
-  //   triggerOnce: true,
-  // });
-  // const animationLeft = useAnimation();
-  // const animationRight = useAnimation();
-
-  // useEffect(() => {
-  //   if (inView) {
-  //     animationLeft.start({
-  //       x: 0,
-  //       transition: {
-  //         type: 'spring',
-  //         duration: 1.5,
-  //         bounce: 0.3,
-  //       },
-  //     });
-  //     animationRight.start({
-  //       x: 0,
-  //       transition: {
-  //         type: 'spring',
-  //         duration: 1.5,
-  //         bounce: 0.3,
-  //       },
-  //     });
-  //   } else if (!inView) {
-  //     animationLeft.start({
-  //       x: '-100vw',
-  //     });
-  //     animationRight.start({
-  //       x: '100vw',
-  //     });
-  //   }
-  // }, [inView, animationLeft, animationRight]);
-
   const boxClasses = 'rounded-2xl bg-primary p-5 bg-opacity-10';
 
   const techStack = [
