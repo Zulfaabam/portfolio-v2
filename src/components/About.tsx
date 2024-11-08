@@ -48,20 +48,36 @@ export default function About() {
   const boxClasses = 'rounded-2xl bg-primary p-5 bg-opacity-10';
 
   const techStack = [
-    { name: 'HTML', id: 1 },
-    { name: 'React', id: 2 },
-    { name: 'Next.js', id: 3 },
-    { name: 'Next.js', id: 4 },
-    { name: 'Next.js', id: 5 },
-    { name: 'Next.js', id: 6 },
+    { name: 'JavaScript', id: 1 },
+    { name: 'HTML', id: 2 },
+    { name: 'CSS', id: 3 },
+    { name: 'TypeScript', id: 4 },
+    { name: 'React', id: 5 },
+    { name: 'React Native', id: 6 },
+    { name: 'Redux', id: 7 },
+    { name: 'Next.js', id: 8 },
+    { name: 'TailwindCSS', id: 9 },
   ];
 
   return (
     <Section id='about' className='grid w-full grid-cols-12 gap-6 text-fg'>
-      <div className={cn('col-start-1 col-end-5', boxClasses)}>
-        <div className='mx-auto flex aspect-square w-[250px] flex-col items-center justify-center'>
+      <div className={cn('col-start-1 col-end-5 flex flex-col', boxClasses)}>
+        <div className='text-center'>
           <h6 className='text-2xl font-medium'>My Tech Stack</h6>
-          <p>I constantly try to improve</p>
+          <p className='text-sm opacity-80'>I constantly try to improve</p>
+          <p className='text-xs opacity-60'>
+            (One day, the stack will reach this sentence)
+          </p>
+        </div>
+        <div className='mt-auto flex flex-wrap-reverse justify-center gap-x-1 gap-y-2 px-[9px]'>
+          {techStack.map((tech) => (
+            <div
+              key={tech.id}
+              className='w-fit rounded-lg bg-opacity-70 bg-gradient-to-br from-accent/70 via-[#3BDDF4]/70 to-primary/70 px-2 py-1 text-sm font-medium text-fg text-opacity-90'
+            >
+              {tech.name}
+            </div>
+          ))}
         </div>
       </div>
       <div
