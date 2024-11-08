@@ -1,4 +1,3 @@
-// import { useEffect } from 'react';
 'use client';
 import Link from 'next/link';
 import Section from './section';
