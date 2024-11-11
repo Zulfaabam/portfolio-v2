@@ -121,39 +121,6 @@ export const toolLists = [
   },
 ];
 
-export const socmedLists = [
-  {
-    title: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/zulfa-fatah-akbar-ahmad/',
-    src: 'https://i.ibb.co/wzK5Jnd/linkedin-icon.png',
-    alt: 'LinkedIn icon',
-  },
-  {
-    title: 'Github',
-    link: 'https://github.com/Zulfaabam',
-    src: 'https://i.ibb.co/tmjnwZq/github-icon.png',
-    alt: 'Github icon',
-  },
-  {
-    title: 'Facebook',
-    link: 'https://www.facebook.com/zulfafatah.akbarahmad/',
-    src: 'https://i.ibb.co/Wx9tJhK/facebook-icon.png',
-    alt: 'Facebook icon',
-  },
-  {
-    title: 'Instagram',
-    link: 'https://www.instagram.com/zfaabam/',
-    src: 'https://i.ibb.co/41fYsJz/instagram-icon.png',
-    alt: 'Instagram icon',
-  },
-  {
-    title: 'Twitter',
-    link: 'https://twitter.com/zabamz1',
-    src: 'https://i.ibb.co/TrtQrG2/twitter-icon.png',
-    alt: 'Twitter icon',
-  },
-];
-
 export const dataLists = [
   {
     content: 'Email',

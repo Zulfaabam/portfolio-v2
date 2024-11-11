@@ -1,6 +1,7 @@
 import { fontPacifico } from '@/lib/fonts';
 import Section from './section';
 import { IconMail } from '@tabler/icons-react';
+import { socmedList } from '@/lib/consts';
 
 export default function TellMeSection() {
   return (
@@ -24,9 +25,20 @@ export default function TellMeSection() {
           <p>
             Portfolio by <span className={`${fontPacifico}`}>Abam</span>
           </p>
-          <div>
-            <a href=''>LinkedIn</a> / <a href=''>Instagram</a> /{' '}
-            <a href=''>GitHub</a>
+          <div className='flex items-center gap-1'>
+            {socmedList.map((soc, idx) => (
+              <div key={soc.title} className='flex items-center gap-1'>
+                <a
+                  href={soc.link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='transition-all duration-300 hover:text-primary'
+                >
+                  {soc.title}
+                </a>
+                {idx !== socmedList.length - 1 ? ' / ' : ''}
+              </div>
+            ))}
           </div>
         </div>
       </div>
