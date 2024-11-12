@@ -9,6 +9,7 @@ import {
 } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { menu } from '@/lib/consts';
 
 export interface Position {
   left: number;
@@ -85,23 +86,16 @@ const SlideNav = () => {
       }}
       className='relative mx-auto flex w-fit rounded-full border-2 border-dark bg-fg p-1'
     >
-      <Menu setPosition={setPosition}>
-        <Link
-          href='/'
-          className={`${pathname === '/' ? 'underline decoration-wavy' : ''} transition-all duration-300 hover:no-underline`}
-        >
-          Home
-        </Link>
-      </Menu>
-      <Menu setPosition={setPosition}>
-        <Link href='/journey'>Journey</Link>
-      </Menu>
-      <Menu setPosition={setPosition}>
-        <Link href='/projects'>Projects</Link>
-      </Menu>
-      <Menu setPosition={setPosition}>
-        <Link href='/gallery'>Gallery</Link>
-      </Menu>
+      {menu.map((m) => (
+        <Menu key={m.id} setPosition={setPosition}>
+          <Link
+            href={m.path}
+            className={`${pathname === m.path ? 'underline decoration-wavy' : ''} transition-all duration-300 hover:no-underline`}
+          >
+            {m.title}
+          </Link>
+        </Menu>
+      ))}
 
       <Cursor position={position} />
     </ul>

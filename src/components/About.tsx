@@ -6,21 +6,10 @@ import Image from 'next/image';
 import { IconArrowRight, IconDownload } from '@tabler/icons-react';
 import { CSSProperties } from 'react';
 import Chip from './ui/chip';
+import { techStack } from '@/lib/consts';
 
 export default function About() {
   const boxClasses = 'rounded-2xl bg-primary p-5 bg-opacity-10';
-
-  const techStack = [
-    { name: 'JavaScript', id: 1 },
-    { name: 'HTML', id: 2 },
-    { name: 'CSS', id: 3 },
-    { name: 'TypeScript', id: 4 },
-    { name: 'React', id: 5 },
-    { name: 'React Native', id: 6 },
-    { name: 'Redux', id: 7 },
-    { name: 'Next.js', id: 8 },
-    { name: 'TailwindCSS', id: 9 },
-  ];
 
   return (
     <Section id='about' className='grid w-full grid-cols-12 gap-6 text-fg'>
@@ -46,7 +35,13 @@ export default function About() {
         className={cn('col-start-5 col-end-10 flex flex-col gap-3', boxClasses)}
       >
         <div className='relative h-20 w-20 rounded-full bg-gray-400'>
-          <Image src='/no-image.svg' alt='abam' fill />
+          <Image
+            src='/abam.jpg'
+            alt='abam'
+            fill
+            priority
+            className='rounded-full'
+          />
         </div>
         <p className='mb-12 text-justify text-base lg:text-xl'>
           Name’s Zulfa Fatah Akbar Ahmad. You can call me Abam. I have 2+ years

@@ -64,63 +64,6 @@ export const imgLists = [
   },
 ];
 
-export const toolLists = [
-  {
-    title: 'Visual Studio Code',
-    src: 'https://i.ibb.co/dpqhjvR/logos-vscode.png',
-    alt: 'VS code icon',
-    className: 'vscode-icon',
-  },
-  {
-    title: 'Figma',
-    src: 'https://i.ibb.co/P1Gn7QQ/logos-figma.png',
-    alt: 'Figma icon',
-    className: 'figma-icon',
-  },
-  {
-    title: 'HTML',
-    src: 'https://i.ibb.co/ft6WYsz/logos-html-5.png',
-    alt: 'HTML icon',
-    className: 'html-icon',
-  },
-  {
-    title: 'CSS',
-    src: 'https://i.ibb.co/7bwGQT9/logos-css-3.png',
-    alt: 'CSS icon',
-    className: 'css-icon',
-  },
-  {
-    title: 'JavaScript',
-    src: 'https://i.ibb.co/7g1Zcv4/logos-javascript.png',
-    alt: 'JavaScript icon',
-    className: 'javascript-icon',
-  },
-  {
-    title: 'SASS',
-    src: 'https://i.ibb.co/j80J7BD/logos-sass.png',
-    alt: 'SASS icon',
-    className: 'sass-icon',
-  },
-  {
-    title: 'React JS',
-    src: 'https://i.ibb.co/fxDxTjh/logos-reactjs.png',
-    alt: 'ReactJS icon',
-    className: 'reactjs-icon',
-  },
-  {
-    title: 'Redux',
-    src: 'https://i.ibb.co/CsX0XJX/redux-logo.png',
-    alt: 'Redux icon',
-    className: 'redux-icon',
-  },
-  {
-    title: 'Tailwind CSS',
-    src: 'https://i.ibb.co/mTHny8k/logos-tailwindcss.png',
-    alt: 'Tailwind CSS icon',
-    className: 'tailwind-icon',
-  },
-];
-
 export const dataLists = [
   {
     content: 'Email',

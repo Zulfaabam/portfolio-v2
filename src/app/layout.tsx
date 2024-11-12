@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import '../globals.css';
 import { outfit } from '@/lib/fonts';
+import FloatingSocmed from '@/components/floating-socmed';
+import Navbar from '@/components/navbar';
 
 export const metadata: Metadata = {
   title: 'Abams',
@@ -16,7 +18,11 @@ export default function RootLayout({
   return (
     <html lang='en' className={`${outfit.className} `}>
       <body>
-        <div id='root'>{children}</div>
+        <div id='root' className='relative'>
+          <Navbar />
+          <FloatingSocmed />
+          {children}
+        </div>
       </body>
     </html>
   );

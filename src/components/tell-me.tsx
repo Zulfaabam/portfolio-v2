@@ -27,7 +27,7 @@ export default function TellMeSection() {
           </p>
           <div className='flex items-center gap-1'>
             {socmedList.map((soc, idx) => (
-              <div key={soc.title} className='flex items-center gap-1'>
+              <div key={soc.id} className='flex items-center gap-1'>
                 <a
                   href={soc.link}
                   target='_blank'
