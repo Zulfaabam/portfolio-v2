@@ -23,8 +23,13 @@ export default function ProjectCard({
   return (
     <div className='rounded-2xl bg-fg p-4'>
       <div className='space-y-2'>
-        <div className='relative h-[184px] w-full rounded-lg'>
-          <Image src={image ? image : '/no-image.svg'} alt={title} fill />
+        <div className='relative aspect-video h-[184px] w-full rounded-lg'>
+          <Image
+            src={image ? image : '/no-image.svg'}
+            alt={title}
+            fill
+            className='rounded-lg object-cover'
+          />
         </div>
         <h6 className='text-xl font-medium text-dark'>{title}</h6>
         <p className='text-sm text-dark/80'>{desc}</p>
