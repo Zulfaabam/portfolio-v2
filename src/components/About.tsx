@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 import Section from './section';
 import { cn } from '@/lib/utils';
@@ -6,10 +5,19 @@ import Image from 'next/image';
 import { IconArrowRight, IconDownload } from '@tabler/icons-react';
 import { CSSProperties } from 'react';
 import Chip from './ui/chip';
-import { techStack } from '@/lib/consts';
+import { techStack as techStackBackup } from '@/lib/consts';
+import { createClient } from '@/lib/supabase/server';
 
-export default function About() {
+export default async function About() {
   const boxClasses = 'rounded-2xl bg-primary p-5 bg-opacity-10';
+
+  const supabase = await createClient();
+
+  const { data, error: techStackError } = await supabase
+    .from('tech_stack')
+    .select('*');
+
+  const techStack = techStackError ? techStackBackup : data;
 
   return (
     <Section id='about' className='grid w-full grid-cols-12 gap-6 text-fg'>
@@ -21,7 +29,7 @@ export default function About() {
             (One day, the stack will reach this sentence)
           </p>
         </div>
-        <div className='mt-auto flex flex-wrap-reverse justify-center gap-x-1 gap-y-2 px-[9px]'>
+        <div className='mt-auto flex flex-wrap-reverse justify-center gap-x-1 gap-y-2 px-1'>
           {techStack.map((tech) => (
             <Chip
               key={tech.id}
@@ -41,7 +49,6 @@ export default function About() {
             fill
             priority
             className='rounded-full'
-            sizes='(max-width:768px) 80px, 60px'
           />
         </div>
         <p className='mb-12 text-justify text-base lg:text-xl'>
@@ -62,7 +69,7 @@ export default function About() {
           'group relative col-start-10 col-end-13 flex cursor-pointer items-center justify-center rounded-2xl bg-secondary bg-opacity-30 p-5',
         )}
       >
-        <div className='absolute transition-all duration-300 group-hover:animate-spin-slow'>
+        <div className='absolute animate-spin-slow'>
           <TextRing text='MY JOURNEY - MY JOURNEY - ' />
         </div>
         <IconArrowRight
