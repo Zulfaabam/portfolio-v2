@@ -1,55 +1,37 @@
 import Link from 'next/link';
 import Section from './section';
 import { IconArrowRight } from '@tabler/icons-react';
+import ProjectCard from './ui/project-card';
+import { createClient } from '@/lib/supabase/server';
 
-import ProjectCard, { ProjectCardProps } from './ui/project-card';
+export default async function FeaturedProjects() {
+  const supabase = await createClient();
 
-const projects: ProjectCardProps[] = [
-  {
-    image:
-      'https://res.cloudinary.com/dx34xih1p/image/upload/v1731469238/The-Portal_t3l1g2.png',
-    title: 'Sunnyside',
-    desc: 'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
-    techStack: [
-      {
-        id: 1,
-        name: 'React',
-      },
-    ],
-    githubUrl: '',
-    liveUrl: '',
-  },
-  {
-    image:
-      'https://res.cloudinary.com/dx34xih1p/image/upload/v1731469601/sunny-1_wcc9zr.jpg',
-    title: 'Sunnyside 2',
-    desc: 'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
-    techStack: [
-      {
-        id: 1,
-        name: 'React',
-      },
-    ],
-    githubUrl: '',
-    liveUrl: '',
-  },
-  {
-    image:
-      'https://res.cloudinary.com/dx34xih1p/image/upload/v1731469911/calcute_honzz0.jpg',
-    title: 'Sunnyside 3',
-    desc: 'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
-    techStack: [
-      {
-        id: 1,
-        name: 'React',
-      },
-    ],
-    githubUrl: '',
-    liveUrl: '',
-  },
-];
+  const { data, error } = await supabase
+    .from('projects')
+    .select(
+      `*, tech_stack:project_tech_stack(id:tech_stack_id, tech_stack(name))`,
+    )
+    .eq('is_featured', true);
 
-export default function FeaturedProjects() {
+  if (error) {
+    return (
+      <Section id='featured-projects'>
+        <p className='text-red-500'>{error.message}</p>
+      </Section>
+    );
+  }
+
+  const projects = data.map((d) => ({
+    ...d,
+    tech_stack: d.tech_stack.map(
+      (stack: { id: number; tech_stack: { name: string } }) => ({
+        id: stack.id,
+        name: stack.tech_stack.name,
+      }),
+    ),
+  }));
+
   return (
     <Section id='featured-projects' className='space-y-11'>
       <div className='flex w-full items-center justify-between text-fg'>
@@ -63,7 +45,7 @@ export default function FeaturedProjects() {
       </div>
       <div className='grid grid-cols-3 gap-6'>
         {projects.map((p) => (
-          <ProjectCard key={p.title} {...p} />
+          <ProjectCard key={p.id} {...p} />
         ))}
       </div>
     </Section>

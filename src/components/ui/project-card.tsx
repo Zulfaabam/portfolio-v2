@@ -6,19 +6,19 @@ import { TechStack } from '@/dto/commonDto';
 export interface ProjectCardProps {
   image: string;
   title: string;
-  desc: string;
-  techStack: TechStack[];
-  githubUrl: string;
-  liveUrl: string;
+  description: string;
+  tech_stack?: TechStack[];
+  github_url: string;
+  live_url: string;
 }
 
 export default function ProjectCard({
   image,
   title,
-  desc,
-  techStack,
-  githubUrl,
-  liveUrl,
+  description,
+  tech_stack,
+  github_url,
+  live_url,
 }: ProjectCardProps) {
   return (
     <div className='rounded-2xl bg-fg p-4'>
@@ -32,11 +32,11 @@ export default function ProjectCard({
           />
         </div>
         <h6 className='text-xl font-medium text-dark'>{title}</h6>
-        <p className='text-sm text-dark/80'>{desc}</p>
+        <p className='text-sm text-dark/80'>{description}</p>
       </div>
       <div className='mt-12 flex w-full items-center justify-between'>
         <div className='flex items-center gap-1'>
-          {techStack.map((tech) => (
+          {tech_stack?.map((tech) => (
             <Chip
               key={tech.id}
               label={tech.name}
@@ -46,14 +46,18 @@ export default function ProjectCard({
         </div>
         <div className='flex gap-2'>
           <a
-            href={githubUrl}
-            className='flex h-8 w-8 items-center justify-center rounded-full bg-dark text-fg'
+            href={github_url}
+            className='flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-dark text-fg'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             <IconBrandGithub size={20} />
           </a>
           <a
-            href={liveUrl}
-            className='flex h-8 w-8 items-center justify-center rounded-full bg-dark text-fg'
+            href={live_url}
+            className='flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-dark text-fg'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             <IconExternalLink size={20} />
           </a>

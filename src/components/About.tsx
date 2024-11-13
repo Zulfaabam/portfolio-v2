@@ -34,13 +34,14 @@ export default function About() {
       <div
         className={cn('col-start-5 col-end-10 flex flex-col gap-3', boxClasses)}
       >
-        <div className='relative h-20 w-20 rounded-full bg-gray-400'>
+        <div className='relative aspect-square w-[60px] rounded-full md:w-20'>
           <Image
             src='/abam.jpg'
             alt='abam'
             fill
             priority
             className='rounded-full'
+            sizes='(max-width:768px) 80px, 60px'
           />
         </div>
         <p className='mb-12 text-justify text-base lg:text-xl'>
