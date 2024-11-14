@@ -9,7 +9,7 @@ import { techStack as techStackBackup } from '@/lib/consts';
 import { createClient } from '@/lib/supabase/server';
 
 export default async function About() {
-  const boxClasses = 'rounded-2xl bg-primary p-5 bg-opacity-10';
+  const boxClasses = 'rounded-2xl bg-primary p-4 lg:p-5 bg-opacity-10';
 
   const supabase = await createClient();
 
@@ -20,27 +20,40 @@ export default async function About() {
   const techStack = techStackError ? techStackBackup : data;
 
   return (
-    <Section id='about' className='grid w-full grid-cols-12 gap-6 text-fg'>
-      <div className={cn('col-start-1 col-end-5 flex flex-col', boxClasses)}>
+    <Section
+      id='about'
+      className='grid w-full grid-cols-1 gap-2 text-fg sm:grid-cols-2 lg:grid-cols-12 xl:gap-6'
+    >
+      <div
+        className={cn(
+          'flex flex-col sm:col-span-2 lg:col-start-1 lg:col-end-5',
+          boxClasses,
+        )}
+      >
         <div className='text-center'>
-          <h6 className='text-2xl font-medium'>My Tech Stack</h6>
-          <p className='text-sm opacity-80'>I constantly try to improve</p>
-          <p className='text-xs opacity-60'>
+          <h6 className='text-lg font-medium sm:text-2xl'>My Tech Stack</h6>
+          <p className='text-xs opacity-80 sm:text-sm'>
+            I constantly try to improve
+          </p>
+          <p className='text-[10px] opacity-60 sm:text-xs'>
             (One day, the stack will reach this sentence)
           </p>
         </div>
-        <div className='mt-auto flex flex-wrap-reverse justify-center gap-x-1 gap-y-2 px-1'>
+        <div className='mt-12 flex flex-wrap-reverse justify-center gap-x-1 gap-y-2 px-1 lg:mt-auto'>
           {techStack.map((tech) => (
             <Chip
               key={tech.id}
               label={tech.name}
-              className='bg-opacity-70 bg-gradient-to-br from-accent/70 via-[#3BDDF4]/70 to-primary/70 text-sm font-medium text-fg text-opacity-90'
+              className='bg-opacity-70 bg-gradient-to-br from-accent/70 via-[#3BDDF4]/70 to-primary/70 text-xs font-medium text-fg text-opacity-90 sm:text-sm'
             />
           ))}
         </div>
       </div>
       <div
-        className={cn('col-start-5 col-end-10 flex flex-col gap-3', boxClasses)}
+        className={cn(
+          'flex flex-col gap-3 lg:col-start-5 lg:col-end-9 xl:col-end-10',
+          boxClasses,
+        )}
       >
         <div className='relative aspect-square w-[60px] rounded-full md:w-20'>
           <Image
@@ -51,33 +64,34 @@ export default async function About() {
             className='rounded-full'
           />
         </div>
-        <p className='mb-12 text-justify text-base lg:text-xl'>
+        <p className='mb-6 text-justify text-base lg:mb-12 lg:text-xl'>
           Name’s Zulfa Fatah Akbar Ahmad. You can call me Abam. I have 2+ years
           of experience as a Frontend Developer.
         </p>
         <a
-          className='mt-auto flex items-center gap-1 text-primary'
+          className='mt-auto flex items-center gap-1 text-sm text-primary lg:text-base'
           href=''
           download
         >
-          <IconDownload /> Download CV
+          <IconDownload className='h-5 w-5 lg:h-6 lg:w-6' /> Download CV
         </a>
       </div>
       <Link
         href='/journey'
         className={cn(
-          'group relative col-start-10 col-end-13 flex cursor-pointer items-center justify-center rounded-2xl bg-secondary bg-opacity-30 p-5',
+          'group relative flex cursor-pointer items-center justify-center rounded-2xl bg-secondary bg-opacity-30 p-4 lg:col-start-9 lg:col-end-13 lg:p-5 xl:col-start-10',
         )}
       >
-        <div className='absolute animate-spin-slow'>
+        <div className='absolute hidden animate-spin-slow sm:block'>
           <TextRing text='MY JOURNEY - MY JOURNEY - ' />
         </div>
+        <h6 className='text-2xl sm:hidden'>MY JOURNEY</h6>
         <IconArrowRight
           size={72}
-          className='text-fg transition-all duration-300 group-hover:animate-bounce-horizontal group-hover:text-accent'
+          className='animate-bounce-horizontal text-accent transition-all duration-300 sm:text-fg sm:group-hover:animate-bounce-horizontal sm:group-hover:text-accent'
         />
       </Link>
-      <div className={cn('col-start-1 col-end-8', boxClasses)}>
+      <div className={cn('lg:col-start-1 lg:col-end-8', boxClasses)}>
         <p className='text-justify text-base lg:text-xl [&_span]:text-primary'>
           I build primarily with <span>React</span>, <span>Next.js</span>, and{' '}
           <span>TailwindCSS</span>. I build reactive, progressive, responsive,
@@ -87,7 +101,7 @@ export default async function About() {
       </div>
       <div
         className={cn(
-          'col-start-8 col-end-13 flex items-center justify-center',
+          'flex items-center justify-center lg:col-start-8 lg:col-end-13',
           boxClasses,
         )}
       >

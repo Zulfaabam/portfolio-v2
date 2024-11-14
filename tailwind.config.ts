@@ -20,7 +20,6 @@ export default {
       backgroundImage: {
         'earth-from-space': 'url(/earth-from-space.png)',
       },
-
       colors: {
         primary: '#76C1FF',
         secondary: '#133d9e',
@@ -56,7 +55,7 @@ export default {
       },
     },
   },
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors, require('tailwind-scrollbar-hide')],
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).

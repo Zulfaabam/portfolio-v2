@@ -33,17 +33,22 @@ export default async function FeaturedProjects() {
   }));
 
   return (
-    <Section id='featured-projects' className='space-y-11'>
+    <Section id='featured-projects' className='space-y-6 lg:space-y-11'>
       <div className='flex w-full items-center justify-between text-fg'>
-        <div className='w-fit space-y-2'>
-          <h2 className='text-4xl font-medium'>Featured Projects ⚙️</h2>
+        <div className='w-fit space-y-1 lg:space-y-2'>
+          <h2 className='text-xl font-medium md:text-4xl'>
+            Featured Projects ⚙️
+          </h2>
           <div className='h-1 w-full bg-accent shadow-[4px_4px_8px_1px_#76C1FF]'></div>
         </div>
-        <Link href='/projects' className='flex items-center gap-1 underline'>
-          All projects <IconArrowRight />
+        <Link
+          href='/projects'
+          className='flex items-center gap-1 text-xs underline md:text-base'
+        >
+          All projects <IconArrowRight className='h-4 w-4 md:h-6 md:w-6' />
         </Link>
       </div>
-      <div className='grid grid-cols-3 gap-6'>
+      <div className='scrollbar-hide flex snap-x snap-mandatory gap-3 overflow-x-scroll *:snap-center lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-hidden'>
         {projects.map((p) => (
           <ProjectCard key={p.id} {...p} />
         ))}

@@ -4,28 +4,20 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
 } from '@tabler/icons-react';
-import useScreenSize from 'hooks/useScreenSize';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function FloatingSocmed() {
-  const [visible, setVisible] = useState(true);
-  const { width } = useScreenSize();
+  const width = typeof window !== 'undefined' && window.innerWidth;
+
+  const [visible, setVisible] = useState(
+    !width ? false : width < 1280 ? false : true,
+  );
 
   const ICON_COLOR: string = '#171717';
 
-  useEffect(() => {
-    if (width < 1280) {
-      setVisible(false);
-    } else {
-      setVisible(true);
-    }
-  }, [width]);
-
   return (
     <motion.div
-      initial={{ x: width < 1280 ? -30 : 0 }}
-      animate={{ x: visible ? 0 : -30 }}
       onPan={(e, panInfo) => {
         if (panInfo.velocity.x < 0) {
           setVisible(false);
@@ -34,11 +26,10 @@ export default function FloatingSocmed() {
         }
       }}
       onClick={() => {
-        if (width > 1280) return;
-
+        if (width && width > 1280) return;
         setVisible(!visible);
       }}
-      className='fixed left-0 top-1/4 z-20 flex h-32 w-9 -translate-y-1/4 flex-col items-center justify-evenly rounded-r-2xl bg-fg/90 xl:h-44 xl:w-12'
+      className={`fixed top-1/4 z-20 flex h-32 w-10 -translate-y-1/4 flex-col items-center justify-evenly rounded-r-2xl bg-fg/90 xl:h-44 xl:w-12 ${visible ? 'left-0' : '-left-7'} transition-all duration-300 xl:left-0`}
     >
       <a
         href='https://github.com/Zulfaabam'

@@ -23,8 +23,8 @@ export default function ProjectCard({
   live_url,
 }: ProjectCardProps) {
   return (
-    <div className='rounded-2xl bg-fg p-4'>
-      <div className='space-y-2'>
+    <div className='min-w-[285px] rounded-2xl bg-fg p-3 lg:w-full lg:p-4'>
+      <div className='space-y-1 lg:space-y-2'>
         <motion.div
           whileHover={{
             scale: 1.75,
@@ -40,13 +40,13 @@ export default function ProjectCard({
             className='rounded-lg object-cover'
           />
         </motion.div>
-        <h6 className='text-xl font-medium text-dark'>{title}</h6>
-        <p className='line-clamp-3 h-[60px] text-sm text-dark/80'>
+        <h6 className='text-lg font-medium text-dark lg:text-xl'>{title}</h6>
+        <p className='line-clamp-3 h-[60px] text-xs text-dark/80 lg:text-sm'>
           {description}
         </p>
       </div>
-      <div className='mt-12 flex w-full items-center justify-between'>
-        <div className='flex items-center gap-1'>
+      <div className='mt-8 flex w-full justify-between gap-2 lg:mt-12 lg:items-center'>
+        <div className='flex items-center gap-[2px] lg:gap-1'>
           {tech_stack?.map((tech) => (
             <Chip
               key={tech.id}
@@ -55,7 +55,7 @@ export default function ProjectCard({
             />
           ))}
         </div>
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-1 lg:gap-2'>
           {!github_url && !live_url && (
             <p className='mt-auto h-8 text-sm leading-8'>Privated</p>
           )}
@@ -63,22 +63,22 @@ export default function ProjectCard({
             <motion.a
               whileHover={{ translateY: -3, translateX: 3 }}
               href={github_url}
-              className='flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-dark text-fg'
+              className='flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-dark text-fg lg:h-8 lg:w-8'
               target='_blank'
               rel='noopener noreferrer'
             >
-              <IconBrandGithub size={20} />
+              <IconBrandGithub className='h-5 w-5' />
             </motion.a>
           )}
           {live_url && (
             <motion.a
               whileHover={{ translateY: -3, translateX: 3 }}
               href={live_url}
-              className='flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-dark text-fg'
+              className='flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-dark text-fg lg:h-8 lg:w-8'
               target='_blank'
               rel='noopener noreferrer'
             >
-              <IconExternalLink size={20} />
+              <IconExternalLink className='h-5 w-5' />
             </motion.a>
           )}
         </div>
