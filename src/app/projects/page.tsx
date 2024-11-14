@@ -1,3 +1,11 @@
+import Section from '@/components/section';
+
 export default function ProjectsPage() {
-  return <h1>Projects page</h1>;
+  return (
+    <div className='relative min-h-screen w-full bg-dark'>
+      <Section id='projects'>
+        <p>Projects</p>
+      </Section>
+    </div>
+  );
 }

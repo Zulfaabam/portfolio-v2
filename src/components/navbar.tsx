@@ -90,7 +90,7 @@ const SlideNav = () => {
         <Menu key={m.id} setPosition={setPosition}>
           <Link
             href={m.path}
-            className={`${pathname === m.path ? 'underline decoration-wavy' : ''} transition-all duration-300 hover:no-underline`}
+            className={`${pathname === m.path ? 'underline decoration-wavy' : ''} transition-all duration-300`}
           >
             {m.title}
           </Link>
