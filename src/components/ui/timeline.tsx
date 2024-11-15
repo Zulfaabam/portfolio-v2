@@ -33,9 +33,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className='w-full bg-dark font-sans md:px-10' ref={containerRef}>
-      <div className='mx-auto max-w-7xl px-4 py-20 md:px-8 lg:px-10'>
-        <h2 className='mb-4 max-w-4xl text-lg text-fg md:text-4xl'>
+    <div className='w-full bg-dark' ref={containerRef}>
+      <div className='mx-auto max-w-7xl px-4 py-10 md:px-8 lg:px-10 lg:py-20'>
+        <h2 className='mb-4 max-w-4xl text-2xl text-fg md:text-4xl'>
           My Journey So Far
         </h2>
         <p className='max-w-sm text-sm text-fg md:text-base'>
@@ -78,7 +78,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className='absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-purple-500 from-[0%] via-blue-500 via-[10%] to-transparent'
+            className='absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-primary from-[0%] via-secondary via-[10%] to-transparent'
           />
         </div>
       </div>
