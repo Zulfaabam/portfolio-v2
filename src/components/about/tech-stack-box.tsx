@@ -13,7 +13,8 @@ export default function TechStackBox({ techStack }: TechStackBoxProps) {
   return (
     <motion.div
       initial={{ y: -10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       className={cn(
         'flex flex-col sm:col-span-2 lg:col-start-1 lg:col-end-5',
         boxClasses,

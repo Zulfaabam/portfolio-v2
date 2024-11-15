@@ -48,7 +48,7 @@ export default async function FeaturedProjects() {
           All projects <IconArrowRight className='h-4 w-4 md:h-6 md:w-6' />
         </Link>
       </div>
-      <div className='flex snap-x snap-mandatory gap-3 overflow-x-scroll scrollbar-hide *:snap-center lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible'>
+      <div className='flex snap-x snap-mandatory gap-3 overflow-x-scroll px-1 py-2 scrollbar-hide *:snap-center lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:py-0'>
         {projects.map((p, idx) => (
           <ProjectCard key={p.id} idx={idx + 1} {...p} />
         ))}

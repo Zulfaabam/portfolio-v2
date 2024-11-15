@@ -29,7 +29,13 @@ export default function ProjectCard({
       initial={{ opacity: 0, y: -10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: idx * 0.2 }}
-      viewport={{ once: true, amount: 0.7 }}
+      viewport={{
+        once: true,
+        amount:
+          typeof window !== 'undefined' && window.innerWidth < 1024
+            ? 0.1
+            : 0.65,
+      }}
       className='min-w-[285px] rounded-2xl bg-fg p-3 shadow-[0_0_5px_1.5px_rgba(234,240,245,1)] lg:w-full lg:p-4'
     >
       <div className='space-y-1 lg:space-y-2'>

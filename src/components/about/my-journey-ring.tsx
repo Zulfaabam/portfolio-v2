@@ -9,7 +9,8 @@ export default function MyJourneyRing() {
   return (
     <motion.div
       initial={{ y: -10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{ delay: 0.4 }}
       className='group relative rounded-2xl bg-secondary bg-opacity-30 p-4 lg:col-start-9 lg:col-end-13 lg:p-5 xl:col-start-10'
     >

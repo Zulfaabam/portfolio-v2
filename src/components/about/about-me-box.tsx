@@ -9,7 +9,8 @@ export default function AboutMeBox() {
   return (
     <motion.div
       initial={{ y: -10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{ delay: 0.2 }}
       className={cn(
         'flex flex-col gap-3 lg:col-start-5 lg:col-end-9 xl:col-end-10',
