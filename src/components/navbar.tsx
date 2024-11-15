@@ -27,7 +27,7 @@ export default function Navbar() {
     if (typeof current === 'number') {
       let direction = current! - scrollYProgress.getPrevious()!;
 
-      if (direction < 0) {
+      if (current == 1 || direction == 1 || direction < 0) {
         setVisible(true);
       } else {
         setVisible(false);
