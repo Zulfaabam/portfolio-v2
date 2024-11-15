@@ -1,11 +1,11 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ShootingStars } from './ui/shooting-stars';
-import { StarsBackground } from './ui/stars-background';
+import { ShootingStars } from '../ui/shooting-stars';
+import { StarsBackground } from '../ui/stars-background';
 import { fontPacifico } from '@/lib/fonts';
-import BorderMagicBtn from './ui/border-magic-btn';
+import BorderMagicBtn from '../ui/border-magic-btn';
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <div className='relative flex h-[40rem] w-full items-center justify-center bg-dark'>
       <motion.div

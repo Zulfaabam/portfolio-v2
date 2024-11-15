@@ -18,6 +18,8 @@ export default function FloatingSocmed() {
 
   return (
     <motion.div
+      initial={{ x: -28 }}
+      animate={{ x: width && width > 1280 ? 0 : -28 }}
       onPan={(e, panInfo) => {
         if (panInfo.velocity.x < 0) {
           setVisible(false);

@@ -1,14 +1,14 @@
-import About from '@/components/about';
-import FeaturedProjects from '@/components/featured-projects';
-import Hero from '@/components/hero';
-import TellMeSection from '@/components/tell-me';
+import FeaturedProjects from '@/components/sections/featured-projects';
+import AboutSection from '@/components/sections/about-section';
+import HeroSection from '@/components/sections/hero-section';
+import TellMeSection from '@/components/sections/tell-me-section';
 
 export default function Homepage() {
   return (
     <div className='relative'>
-      <Hero />
+      <HeroSection />
       <div className='w-full bg-gradient-to-b from-dark via-dark to-black'>
-        <About />
+        <AboutSection />
         <FeaturedProjects />
       </div>
       <div className='w-full bg-earth-from-space bg-cover bg-no-repeat'>

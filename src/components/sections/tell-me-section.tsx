@@ -1,5 +1,5 @@
 import { fontPacifico } from '@/lib/fonts';
-import Section from './section';
+import Section from '../section';
 import { IconMail } from '@tabler/icons-react';
 import { socmedList } from '@/lib/consts';
 

@@ -12,6 +12,7 @@ export interface ProjectCardProps {
   tech_stack?: TechStack[];
   github_url: string;
   live_url: string;
+  idx: number;
 }
 
 export default function ProjectCard({
@@ -21,9 +22,16 @@ export default function ProjectCard({
   tech_stack,
   github_url,
   live_url,
+  idx,
 }: ProjectCardProps) {
   return (
-    <div className='min-w-[285px] rounded-2xl bg-fg p-3 lg:w-full lg:p-4'>
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: idx * 0.2 }}
+      viewport={{ once: true, amount: 0.7 }}
+      className='min-w-[285px] rounded-2xl bg-fg p-3 shadow-[0_0_5px_1.5px_rgba(234,240,245,1)] lg:w-full lg:p-4'
+    >
       <div className='space-y-1 lg:space-y-2'>
         <motion.div
           whileHover={{
@@ -83,6 +91,6 @@ export default function ProjectCard({
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

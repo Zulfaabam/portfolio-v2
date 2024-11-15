@@ -1,3 +1,5 @@
+export const boxClasses = 'rounded-2xl bg-primary p-4 lg:p-5 bg-opacity-10';
+
 export const socmedList = [
   {
     id: 1,
