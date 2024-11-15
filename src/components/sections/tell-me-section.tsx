@@ -19,12 +19,22 @@ export default function TellMeSection() {
             project
           </h2>
           <div className='mx-auto flex justify-center gap-2 md:gap-4'>
-            <button className='flex h-9 w-[90px] items-center justify-center gap-1 rounded-full bg-accent text-xs font-medium text-dark md:h-10 md:w-[100px] md:text-sm'>
+            <a
+              href='mailto:zulfafatahakbar@gmail.com'
+              className='flex h-9 w-[90px] cursor-pointer items-center justify-center gap-1 rounded-full bg-accent text-xs font-medium text-dark md:h-10 md:w-[100px] md:text-sm'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <IconMail size={18} /> Email me
-            </button>
-            <button className='h-9 w-[90px] rounded-full bg-fg text-xs font-medium text-dark md:h-10 md:w-[100px] md:text-sm'>
+            </a>
+            <a
+              href='https://wa.me/6281542426045'
+              className='flex h-9 w-[90px] cursor-pointer items-center justify-center rounded-full bg-fg text-xs font-medium text-dark md:h-10 md:w-[100px] md:text-sm'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               WhatsApp
-            </button>
+            </a>
           </div>
         </div>
         <div className='mb-2 mt-10 h-[1px] w-full bg-fg/90 md:mb-4 md:mt-20'></div>

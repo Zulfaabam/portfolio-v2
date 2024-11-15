@@ -32,7 +32,9 @@ export default function AboutMeBox() {
       </p>
       <a
         className='mt-auto flex items-center gap-1 text-sm text-primary lg:text-base'
-        href=''
+        href='/CV_ZULFA.pdf'
+        target='_blank'
+        rel='noopener noreferrer'
         download
       >
         <IconDownload className='h-5 w-5 lg:h-6 lg:w-6' /> Download CV

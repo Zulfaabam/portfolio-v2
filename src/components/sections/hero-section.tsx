@@ -3,8 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ShootingStars } from '../ui/shooting-stars';
 import { StarsBackground } from '../ui/stars-background';
 import { fontPacifico } from '@/lib/fonts';
-import BorderMagicBtn from '../ui/border-magic-btn';
 import { useEffect, useState } from 'react';
+import { IconArrowNarrowDownDashed } from '@tabler/icons-react';
 
 export default function HeroSection() {
   const [wordIndex, setWordIndex] = useState<number>(0);
@@ -111,11 +111,9 @@ export default function HeroSection() {
           </AnimatePresence>{' '}
           web
         </h1>
-        <div className='mt-2'>
-          <BorderMagicBtn
-            onClick={() => console.log('hire me')}
-            text='Hire me'
-          />
+        <div className='mt-2 flex flex-col items-center text-fg text-opacity-80'>
+          <h6>Get to know me</h6>
+          <IconArrowNarrowDownDashed stroke={1.5} className='h-16 w-16' />
         </div>
       </motion.div>
       <ShootingStars />

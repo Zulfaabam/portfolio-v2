@@ -1,8 +1,8 @@
 'use client';
-import { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
 export interface BorderMagicBtnProps<T> extends ButtonHTMLAttributes<T> {
-  text: string;
+  text: string | React.ReactNode;
 }
 
 export default function BorderMagicBtn({
