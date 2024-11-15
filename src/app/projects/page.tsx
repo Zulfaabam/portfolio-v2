@@ -40,7 +40,8 @@ export default async function ProjectsPage() {
           </h2>
           <p className='max-w-sm text-sm text-fg md:text-base'>
             Various projects I built, from day one I learn Frontend Development
-            until now. Please take a look.
+            until now. Some I built it solo, some collaborated with other devs
+            during my office work. Please take a look.
           </p>
         </div>
         <div className='grid grid-cols-1 gap-3 px-4 sm:grid-cols-2 md:gap-6 md:px-8 lg:px-10'>
