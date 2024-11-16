@@ -14,15 +14,7 @@ export default async function FeaturedProjects() {
     )
     .eq('is_featured', true);
 
-  if (error) {
-    return (
-      <Section id='featured-projects'>
-        <p className='text-red-500'>{error.message}</p>
-      </Section>
-    );
-  }
-
-  const projects = data.map((d) => ({
+  const projects = data?.map((d) => ({
     ...d,
     tech_stack: d.tech_stack.map(
       (stack: { id: number; tech_stack: { name: string } }) => ({
@@ -49,9 +41,15 @@ export default async function FeaturedProjects() {
         </Link>
       </div>
       <div className='flex snap-x snap-mandatory gap-3 overflow-x-scroll px-1 py-2 scrollbar-hide *:snap-center lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:py-0'>
-        {projects.map((p, idx) => (
-          <ProjectCard key={p.id} idx={idx + 1} {...p} />
-        ))}
+        {error ? (
+          <p className='text-center text-red-400 sm:col-span-2'>
+            {error.message}
+          </p>
+        ) : (
+          projects?.map((p, idx) => (
+            <ProjectCard key={p.id} idx={idx + 1} {...p} />
+          ))
+        )}
       </div>
     </Section>
   );

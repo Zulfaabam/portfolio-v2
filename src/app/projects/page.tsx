@@ -11,17 +11,7 @@ export default async function ProjectsPage() {
       `*, tech_stack:project_tech_stack(id:tech_stack_id, tech_stack(name))`,
     );
 
-  if (error) {
-    return (
-      <div className='relative min-h-screen w-full bg-dark'>
-        <Section id='projects'>
-          <p className='text-red-500'>{error.message}</p>
-        </Section>
-      </div>
-    );
-  }
-
-  const projects = data.map((d) => ({
+  const projects = data?.map((d) => ({
     ...d,
     tech_stack: d.tech_stack.map(
       (stack: { id: number; tech_stack: { name: string } }) => ({
@@ -45,9 +35,13 @@ export default async function ProjectsPage() {
           </p>
         </div>
         <div className='grid grid-cols-1 gap-3 px-4 sm:grid-cols-2 md:gap-6 md:px-8 lg:px-10'>
-          {projects.map((p) => (
-            <ProjectCard key={p.id} {...p} />
-          ))}
+          {error ? (
+            <p className='text-center text-red-400 sm:col-span-2'>
+              {error.message}
+            </p>
+          ) : (
+            projects?.map((p) => <ProjectCard key={p.id} {...p} />)
+          )}
         </div>
       </Section>
     </div>
