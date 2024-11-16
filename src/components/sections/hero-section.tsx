@@ -81,7 +81,7 @@ export default function HeroSection() {
         if (state >= words.length - 1) return 0;
         return state + 1;
       });
-    }, 3500);
+    }, 2500);
     return () => clearInterval(id);
   }, []);
 

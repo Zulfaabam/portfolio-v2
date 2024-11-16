@@ -43,7 +43,7 @@ export default function ProjectCard({
           typeof window !== 'undefined' && window.innerWidth < 1024
             ? 0.1
             : isProjectsPage
-              ? 0.4
+              ? 0.2
               : 0.65,
       }}
       className='min-w-[285px] rounded-2xl bg-fg p-3 shadow-[0_0_5px_1.5px_rgba(234,240,245,1)] lg:w-full lg:p-4'
