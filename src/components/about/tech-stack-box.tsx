@@ -2,8 +2,12 @@
 import { boxClasses } from '@/lib/consts';
 import { cn } from '@/lib/utils';
 import Chip from '../ui/chip';
-import { TechStack } from '@/dto/commonDto';
 import { motion } from 'framer-motion';
+
+export interface TechStack {
+  id: number;
+  name: string;
+}
 
 export interface TechStackBoxProps {
   techStack: TechStack[];
