@@ -37,10 +37,12 @@ export default async function ProjectsPage() {
         <div className='grid grid-cols-1 gap-3 px-4 sm:grid-cols-2 md:gap-6 md:px-8 lg:px-10'>
           {error ? (
             <p className='text-center text-red-400 sm:col-span-2'>
-              {error.message}
+              {error.message ?? 'Something when wrong!'}
             </p>
           ) : (
-            projects?.map((p) => <ProjectCard key={p.id} {...p} />)
+            projects?.map((p, idx) => (
+              <ProjectCard key={p.id} idx={idx + 1} {...p} />
+            ))
           )}
         </div>
       </Section>

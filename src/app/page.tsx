@@ -11,7 +11,7 @@ export default function Homepage() {
         <AboutSection />
         <FeaturedProjects />
       </div>
-      <div className='w-full bg-earth-from-space bg-cover bg-no-repeat'>
+      <div className='w-full bg-black/60 bg-earth-from-space bg-cover bg-no-repeat bg-blend-hard-light'>
         <TellMeSection />
       </div>
     </div>

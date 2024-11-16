@@ -4,6 +4,7 @@ import Chip from './chip';
 import Image from 'next/image';
 import { TechStack } from '@/dto/commonDto';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 export interface ProjectCardProps {
   image: string;
@@ -24,28 +25,38 @@ export default function ProjectCard({
   live_url,
   idx,
 }: ProjectCardProps) {
+  const pathname = usePathname();
+
+  const isProjectsPage = pathname === '/projects';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: idx * 0.2 }}
+      transition={{
+        delay: isProjectsPage ? 0 : idx * 0.2,
+        duration: isProjectsPage ? 0.75 : 0.5,
+      }}
       viewport={{
         once: true,
         amount:
           typeof window !== 'undefined' && window.innerWidth < 1024
             ? 0.1
-            : 0.65,
+            : isProjectsPage
+              ? 0.4
+              : 0.65,
       }}
       className='min-w-[285px] rounded-2xl bg-fg p-3 shadow-[0_0_5px_1.5px_rgba(234,240,245,1)] lg:w-full lg:p-4'
     >
       <div className='space-y-1 lg:space-y-2'>
         <motion.div
           whileHover={{
-            scale: 1.75,
+            scale: 1.5,
             zIndex: 10,
             translateY: 60,
+            skewY: idx % 2 === 0 ? 2 : -2,
           }}
-          className='relative aspect-video w-full cursor-zoom-in rounded-lg'
+          className='relative aspect-video w-full cursor-zoom-in rounded-lg hover:shadow-md hover:shadow-neutral-700'
         >
           <Image
             src={image ? image : '/no-image.svg'}
