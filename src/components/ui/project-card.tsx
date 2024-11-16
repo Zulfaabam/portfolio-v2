@@ -2,9 +2,9 @@
 import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 import Chip from './chip';
 import Image from 'next/image';
-import { TechStack } from '@/dto/commonDto';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import { TechStack } from '../about/tech-stack-box';
 
 export interface ProjectCardProps {
   image: string;
