@@ -1,3 +1,3 @@
 # Abam's Portfolio Website
 
-## Created using React
+Created using Next.js, TailwindCSS, and Framer Motion

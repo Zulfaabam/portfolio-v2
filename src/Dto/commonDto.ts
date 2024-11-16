@@ -3,3 +3,8 @@ export interface ImageProps {
   alt?: string;
   title?: string;
 }
+
+export interface TechStack {
+  id: number;
+  name: string;
+}

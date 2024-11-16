@@ -1,0 +1,7 @@
+{
+  "tailwindConfig": "./tailwind.config.ts",
+  "tailwindFunctions": ["tw", "clsx"],
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "singleQuote": true,
+  "jsxSingleQuote": true
+}

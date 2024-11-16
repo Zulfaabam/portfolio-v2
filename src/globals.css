@@ -1,0 +1,45 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap'); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* .title {
+    @apply text-white font-bold text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  .subtitle {
+    @apply text-dark dark:text-white text-2xl md:text-3xl lg:text-4xl font-semibold after:w-40 after:h-[0.1rem] after:block after:my-2 after:mx-auto after:bg-gradient-to-r after:from-blue after:to-blue-light text-center;
+  }
+
+  .theme-changer {
+    @apply ml-auto text-dark dark:text-white w-[30px] aspect-square cursor-pointer transition-all;
+  }
+
+  .circles {
+    @apply relative pr-8 pl-10 mb-4 before:absolute before:top-[5px] before:left-[5px] before:w-4 before:h-4 before:bg-white before:border-4 before:border-blue-light before:rounded-full before:z-10;
+  } */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-ring {
+  --character-width: 1.25; /* In "ch" units */
+}
+
+.text-ring [style*='--index'] {
+  --inner-angle: calc((360 / var(--total)) * 1deg);
+  --radius: calc((var(--character-width, 1) / sin(var(--inner-angle))) * -1ch);
+  font-weight: 500;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+    rotate(calc(var(--inner-angle) * var(--index)))
+    translateY(var(--radius, -5ch));
+}
