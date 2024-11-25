@@ -3,6 +3,7 @@ import '../globals.css';
 import { outfit } from '@/lib/fonts';
 import FloatingSocmed from '@/components/floating-socmed';
 import Navbar from '@/components/navbar';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'Abams',
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Navbar />
           <FloatingSocmed />
           {children}
+          <Analytics />
         </div>
       </body>
     </html>
