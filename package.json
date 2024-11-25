@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@vercel/analytics": "^1.4.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.11",
     "next": "^15.0.2",
