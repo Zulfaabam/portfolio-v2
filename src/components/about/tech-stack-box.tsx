@@ -16,48 +16,40 @@ export interface TechStackBoxProps {
 }
 
 export default function TechStackBox({ techStack }: TechStackBoxProps) {
+  const sortedStackId = structuredClone(techStack)
+    .sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    })
+    .map((d) => d.id.toString());
+
   useEffect(() => {
     const container = document.querySelector('.swapy-container');
 
     const swapy = createSwapy(container, {
-      animation: 'spring', // or spring or none
       swapMode: 'hover',
     });
 
-    swapy.enable(true);
+    swapy.onSwapEnd(({ data }) => {
+      const checkRightAnswer = (arr2: (string | null)[]) =>
+        data.array.map((d) => d.itemId).length === arr2.length &&
+        data.array
+          .map((d) => d.itemId)
+          .every((element, index) => element === arr2[index]);
 
-    swapy.onSwapEnd(({ data, hasChanged }) => {
-      console.log(hasChanged);
-      console.log('end', data);
-
-      const copiedStack = structuredClone(techStack).sort((a, b) => {
-        if (a.name < b.name) {
-          return -1;
-        }
-        if (a.name > b.name) {
-          return 1;
-        }
-        return 0;
-      });
-
-      console.log(copiedStack);
-
-      const compareArrays = (
-        arr1: (string | null)[],
-        arr2: (string | null)[],
-      ) =>
-        arr1.length === arr2.length &&
-        arr1.every((element, index) => element === arr2[index]);
-
-      if (
-        compareArrays(
-          data.array.map((d) => d.itemId),
-          copiedStack.map((d) => d.id.toString()),
-        )
-      ) {
+      if (checkRightAnswer(sortedStackId)) {
         console.log('same');
       }
     });
+
+    return () => {
+      swapy.destroy();
+    };
   }, []);
 
   return (
@@ -76,7 +68,7 @@ export default function TechStackBox({ techStack }: TechStackBoxProps) {
           I constantly try to improve
         </p>
         <p className='text-[10px] opacity-60 sm:text-xs'>
-          (Try sorting the stack and get surprised!)
+          (Try sorting the stack from the bottom left!)
         </p>
       </div>
       <div className='swapy-container mt-12 flex flex-wrap-reverse justify-center gap-x-1 gap-y-2 px-1 lg:mt-auto'>

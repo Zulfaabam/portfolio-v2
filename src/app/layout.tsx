@@ -8,7 +8,8 @@ import { Analytics } from '@vercel/analytics/next';
 export const metadata: Metadata = {
   title: 'Abams',
   description: "Abam's Portfolio created using Next.js",
-  icons: 'https://i.ibb.co/R4pTgPX/abam-rounded.png',
+  icons:
+    'https://res.cloudinary.com/dx34xih1p/image/upload/v1733804018/abam-rounded_yt6jql.png',
   openGraph: {
     images: [
       {
