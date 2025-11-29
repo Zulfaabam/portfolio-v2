@@ -14,7 +14,7 @@ function Home() {
     <div className='relative'>
       <HeroSection />
       <div className='from-dark via-dark w-full bg-linear-to-b to-black'>
-        {/* <AboutSection /> */}
+        <AboutSection />
         {/* <FeaturedProjects /> */}
       </div>
       <div className='bg-earth-from-space w-full bg-black/60 bg-cover bg-no-repeat bg-blend-hard-light'>
