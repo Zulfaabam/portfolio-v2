@@ -1,3 +1,8 @@
+import AboutSection from '@/components/sections/about-section';
+import FeaturedProjects from '@/components/sections/featured-projects';
+import HeroSection from '@/components/sections/hero-section';
+import TellMeSection from '@/components/sections/tell-me-section';
+import { getSupabaseServerClient } from '@/lib/supabase/server';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
@@ -6,22 +11,15 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <main className='flex min-h-dvh w-screen flex-col items-center justify-center gap-y-4 p-4'>
-      <img
-        className='w-full max-w-sm'
-        src='https://raw.githubusercontent.com/tanstack/tanstack.com/main/src/images/splash-dark.png'
-        alt='TanStack Logo'
-      />
-      <h1 className='font-outfit'>
-        <span className='line-through'>Next.js</span> TanStack Start
-      </h1>
-      <a
-        className='bg-foreground text-background rounded-full px-4 py-1 hover:opacity-90'
-        href='https://tanstack.com/start/latest'
-        target='_blank'
-      >
-        Docs
-      </a>
-    </main>
+    <div className='relative'>
+      <HeroSection />
+      <div className='w-full bg-gradient-to-b from-dark via-dark to-black'>
+        {/* <AboutSection /> */}
+        {/* <FeaturedProjects /> */}
+      </div>
+      <div className='w-full bg-black/60 bg-earth-from-space bg-cover bg-no-repeat bg-blend-hard-light'>
+        {/* <TellMeSection /> */}
+      </div>
+    </div>
   );
 }

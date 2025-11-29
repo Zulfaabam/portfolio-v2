@@ -1,6 +1,6 @@
 import Section from '../section';
 import { techStack as techStackBackup } from '@/lib/consts';
-import { createClient } from '@/lib/supabase/server';
+import { getSupabaseServerClient } from '@/lib/supabase/server';
 import TechStackBox from '../about/tech-stack-box';
 import AboutMeBox from '../about/about-me-box';
 import MyJourneyRing from '../about/my-journey-ring';
@@ -8,7 +8,7 @@ import LongDescBox from '../about/long-desc-box';
 import LearningBox from '../about/learning-box';
 
 export default async function AboutSection() {
-  const supabase = await createClient();
+  const supabase = getSupabaseServerClient();
 
   const { data, error: techStackError } = await supabase
     .from('tech_stack')

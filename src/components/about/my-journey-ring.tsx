@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils';
 import { IconArrowRight } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from '@tanstack/react-router';
 import { CSSProperties } from 'react';
 
 export default function MyJourneyRing() {
@@ -15,7 +15,7 @@ export default function MyJourneyRing() {
       className='group relative rounded-2xl bg-secondary bg-opacity-30 p-4 lg:col-start-9 lg:col-end-13 lg:p-5 xl:col-start-10'
     >
       <Link
-        href='/journey'
+        to='/journey'
         className={cn(
           'relative flex h-full w-full cursor-pointer items-center justify-center',
         )}

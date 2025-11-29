@@ -2,7 +2,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { ShootingStars } from '../ui/shooting-stars';
 import { StarsBackground } from '../ui/stars-background';
-import { fontPacifico } from '@/lib/fonts';
 import { useEffect, useState } from 'react';
 import { IconArrowNarrowDownDashed } from '@tabler/icons-react';
 
@@ -93,7 +92,7 @@ export default function HeroSection() {
         transition={{ ease: 'easeInOut' }}
         className='relative z-10 flex w-full flex-col items-center justify-center gap-3 md:gap-4'
       >
-        <h3 className={`${fontPacifico} text-base text-fg md:text-2xl`}>
+        <h3 className={`font-pacifico text-base text-fg md:text-2xl`}>
           Hi, I am Abam
         </h3>
         <h1 className='relative mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight text-fg md:text-5xl md:leading-tight'>

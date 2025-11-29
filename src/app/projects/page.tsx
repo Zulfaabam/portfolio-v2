@@ -1,9 +1,9 @@
 import Section from '@/components/section';
 import ProjectCard from '@/components/ui/project-card';
-import { createClient } from '@/lib/supabase/server';
+import { getSupabaseServerClient } from '@/lib/supabase/server';
 
 export default async function ProjectsPage() {
-  const supabase = await createClient();
+  const supabase = getSupabaseServerClient();
 
   const { data, error } = await supabase
     .from('projects')

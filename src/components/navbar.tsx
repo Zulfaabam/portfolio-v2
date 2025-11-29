@@ -7,7 +7,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from '@tanstack/react-router';
 import { usePathname } from 'next/navigation';
 import { menu } from '@/lib/consts';
 
@@ -89,7 +89,7 @@ const SlideNav = () => {
       {menu.map((m) => (
         <Menu key={m.id} setPosition={setPosition}>
           <Link
-            href={m.path}
+            to={m.path}
             className={`${pathname === m.path ? 'underline decoration-wavy' : ''} transition-all duration-300`}
           >
             {m.title}

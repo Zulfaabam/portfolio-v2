@@ -1,10 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap'); */
+@import '@fontsource-variable/outfit';
+@import '@fontsource/pacifico';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import '@fontsource-variable/outfit';
-@import '@fontsource/pacifico';
 
 @theme inline {
   --font-outfit: 'Outfit Variable', sans-serif;

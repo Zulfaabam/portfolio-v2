@@ -1,5 +1,5 @@
-import FloatingSocmed from '@/components/floating-socmed';
-import Navbar from '@/components/navbar';
+// import FloatingSocmed from '@/components/floating-socmed';
+// import Navbar from '@/components/navbar';
 // import { Analytics } from '@vercel/analytics/next';
 import {
   Outlet,
@@ -8,6 +8,8 @@ import {
   Scripts,
 } from '@tanstack/react-router';
 import appCss from './globals.css?url';
+import FloatingSocmed from '@/components/floating-socmed';
+import Navbar from '@/components/navbar';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -68,11 +70,13 @@ export const Route = createRootRoute({
 
 function RootLayout() {
   return (
-    <html lang='en'>
+    <html lang='en' className='font-outfit'>
       <head>
         <HeadContent />
       </head>
       <body>
+        <Navbar />
+        <FloatingSocmed />
         <Outlet />
         <Scripts />
       </body>

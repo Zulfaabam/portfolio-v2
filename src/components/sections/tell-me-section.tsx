@@ -1,4 +1,3 @@
-import { fontPacifico } from '@/lib/fonts';
 import Section from '../section';
 import { IconMail } from '@tabler/icons-react';
 import { socmedList } from '@/lib/consts';
@@ -40,7 +39,7 @@ export default function TellMeSection() {
         <div className='mb-2 mt-10 h-[1px] w-full bg-fg/90 md:mb-4 md:mt-20'></div>
         <div className='flex justify-between'>
           <p className='text-xs md:text-base'>
-            Portfolio by <span className={`${fontPacifico}`}>Abam</span>
+            Portfolio by <span className='font-pacifico'>Abam</span>
           </p>
           <div className='flex items-center gap-[2px] md:gap-1'>
             {socmedList.map((soc, idx) => (

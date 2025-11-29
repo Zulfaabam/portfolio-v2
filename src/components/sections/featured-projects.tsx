@@ -1,11 +1,11 @@
-import Link from 'next/link';
+import { Link } from '@tanstack/react-router';
 import Section from '../section';
 import { IconArrowRight } from '@tabler/icons-react';
 import ProjectCard from '../ui/project-card';
-import { createClient } from '@/lib/supabase/server';
+import { getSupabaseServerClient } from '@/lib/supabase/server';
 
 export default async function FeaturedProjects() {
-  const supabase = await createClient();
+  const supabase = getSupabaseServerClient();
 
   const { data, error } = await supabase
     .from('projects')
@@ -34,7 +34,7 @@ export default async function FeaturedProjects() {
           <div className='h-1 w-full bg-accent shadow-[4px_4px_8px_1px_#76C1FF]'></div>
         </div>
         <Link
-          href='/projects'
+          to='/projects'
           className='flex items-center gap-1 text-xs underline md:text-base'
         >
           All projects <IconArrowRight className='h-4 w-4 md:h-6 md:w-6' />
