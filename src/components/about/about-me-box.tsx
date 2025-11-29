@@ -27,7 +27,7 @@ export default function AboutMeBox() {
         />
       </div>
       <p className='mb-6 text-justify text-base lg:mb-12 lg:text-xl'>
-        Name’s Zulfa Fatah Akbar Ahmad. You can call me Abam. I have 2+ years of
+        Name’s Zulfa Fatah Akbar Ahmad. You can call me Abam. I have 3+ years of
         experience as a Frontend Developer.
       </p>
       <a
