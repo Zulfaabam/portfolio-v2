@@ -74,7 +74,7 @@ function RootLayout() {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body id='root' className='relative'>
         <Navbar />
         <FloatingSocmed />
         <Outlet />

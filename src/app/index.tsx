@@ -13,11 +13,11 @@ function Home() {
   return (
     <div className='relative'>
       <HeroSection />
-      <div className='w-full bg-gradient-to-b from-dark via-dark to-black'>
+      <div className='from-dark via-dark w-full bg-linear-to-b to-black'>
         {/* <AboutSection /> */}
         {/* <FeaturedProjects /> */}
       </div>
-      <div className='w-full bg-black/60 bg-earth-from-space bg-cover bg-no-repeat bg-blend-hard-light'>
+      <div className='bg-earth-from-space w-full bg-black/60 bg-cover bg-no-repeat bg-blend-hard-light'>
         {/* <TellMeSection /> */}
       </div>
     </div>

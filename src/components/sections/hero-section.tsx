@@ -22,7 +22,7 @@ export default function HeroSection() {
             duration: 0.1,
             repeatType: 'reverse',
           }}
-          className='inline-block bg-gradient-to-b from-white via-fg via-30% to-blue-500 bg-clip-text text-transparent'
+          className='via-fg inline-block bg-linear-to-b from-white via-30% to-blue-500 bg-clip-text text-transparent'
         >
           cool<span className='text-fg'>🥶</span>
         </motion.span>
@@ -31,7 +31,7 @@ export default function HeroSection() {
     {
       id: 2,
       content: (
-        <span className='inline-block bg-gradient-to-b from-white via-fg via-30% to-yellow-500 bg-clip-text text-transparent'>
+        <span className='via-fg inline-block bg-linear-to-b from-white via-30% to-yellow-500 bg-clip-text text-transparent'>
           good
           <motion.span
             animate={{
@@ -46,7 +46,7 @@ export default function HeroSection() {
               repeatType: 'reverse',
               ease: 'easeInOut',
             }}
-            className='inline-block text-fg'
+            className='text-fg inline-block'
           >
             👍
           </motion.span>
@@ -66,7 +66,7 @@ export default function HeroSection() {
             duration: 1,
             repeatType: 'reverse',
           }}
-          className='inline-block bg-gradient-to-b from-white via-fg via-30% to-pink-600 bg-clip-text text-transparent'
+          className='via-fg inline-block bg-linear-to-b from-white via-30% to-pink-600 bg-clip-text text-transparent'
         >
           cute<span className='text-fg'>😻</span>
         </motion.span>
@@ -85,17 +85,17 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className='relative flex h-[40rem] w-full items-center justify-center bg-dark'>
+    <div className='bg-dark relative flex h-160 w-full items-center justify-center'>
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: [0.1, 0.25, 0.4, 0.5, 0.75, 1] }}
         transition={{ ease: 'easeInOut' }}
         className='relative z-10 flex w-full flex-col items-center justify-center gap-3 md:gap-4'
       >
-        <h3 className={`font-pacifico text-base text-fg md:text-2xl`}>
+        <h3 className={`font-pacifico text-fg text-base md:text-2xl`}>
           Hi, I am Abam
         </h3>
-        <h1 className='relative mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight text-fg md:text-5xl md:leading-tight'>
+        <h1 className='text-fg relative mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight md:text-5xl md:leading-tight'>
           I make web,{' '}
           <AnimatePresence>
             <motion.span
@@ -110,7 +110,7 @@ export default function HeroSection() {
           </AnimatePresence>{' '}
           web
         </h1>
-        <div className='mt-2 flex flex-col items-center text-fg text-opacity-80'>
+        <div className='text-fg text-opacity-80 mt-2 flex flex-col items-center'>
           <h6>Get to know me</h6>
           <IconArrowNarrowDownDashed stroke={1.5} className='h-16 w-16' />
         </div>
