@@ -1,4 +1,7 @@
-import { Outfit, Pacifico } from 'next/font/google';
+// import { Outfit, Pacifico } from 'next/font/google';
+
+import pkg from 'next/font/google';
+const { Outfit, Pacifico } = pkg;
 
 export const outfit = Outfit({
   subsets: ['latin'],

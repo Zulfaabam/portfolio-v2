@@ -30,6 +30,8 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
+    "@fontsource-variable/outfit": "^5.2.8",
+    "@fontsource/pacifico": "^5.2.7",
     "@next/eslint-plugin-next": "^15.0.3",
     "@tailwindcss/vite": "^4.1.15",
     "@types/react": "^18.3.12",

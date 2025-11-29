@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import viteReact from '@vitejs/plugin-react';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import tsConfigPaths from 'vite-tsconfig-paths';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
@@ -10,14 +10,14 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     // Enables Vite to resolve imports using path aliases.
-    tsconfigPaths(),
+    tsConfigPaths(),
     tanstackStart({
-      srcDirectory: 'src', // This is the default
-      router: {
+      // srcDirectory: 'src', // This is the default
+      tsr: {
         // Specifies the directory TanStack Router uses for your routes.
-        routesDirectory: 'app', // Defaults to "routes", relative to srcDirectory
+        routesDirectory: 'src/app', // Defaults to "routes", relative to srcDirectory
       },
     }),
-    viteReact(),
+    // viteReact(),
   ],
 });

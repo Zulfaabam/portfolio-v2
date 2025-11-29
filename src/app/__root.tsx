@@ -1,6 +1,3 @@
-// import type { Metadata } from 'next';
-import '../globals.css';
-import { outfit } from '@/lib/fonts';
 import FloatingSocmed from '@/components/floating-socmed';
 import Navbar from '@/components/navbar';
 // import { Analytics } from '@vercel/analytics/next';
@@ -20,12 +17,30 @@ export const Route = createRootRoute({
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
-      { title: 'TanStack Start Starter' },
+      { title: 'Abams' },
+      {
+        name: 'description',
+        content: "Abam's Portfolio created using Tanstack Start",
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://res.cloudinary.com/dx34xih1p/image/upload/c_crop,w_1200,h_630/v1731747790/abams-home_pxrrjw.png',
+      },
+      {
+        property: 'og:title',
+        content: "Abam's Portfolio Website",
+      },
     ],
     links: [
       {
         rel: 'stylesheet',
         href: appCss,
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: 'https://res.cloudinary.com/dx34xih1p/image/upload/v1733804018/abam-rounded_yt6jql.png',
       },
     ],
   }),
@@ -53,7 +68,7 @@ export const Route = createRootRoute({
 
 function RootLayout() {
   return (
-    <html lang='en' className={`${outfit.className} `}>
+    <html lang='en'>
       <head>
         <HeadContent />
       </head>

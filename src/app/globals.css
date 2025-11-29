@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@fontsource-variable/outfit';
+@import '@fontsource/pacifico';
+
+@theme inline {
+  --font-outfit: 'Outfit Variable', sans-serif;
+  --font-pacifico: 'Pacifico', cursive;
+}
+
 @layer components {
   /* .title {
     @apply text-white font-bold text-4xl md:text-5xl lg:text-6xl;
