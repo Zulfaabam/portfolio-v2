@@ -4,6 +4,59 @@ import Image from 'next/image';
 
 const journeys = [
   {
+    title: '2025',
+    content: (
+      <div className='space-y-3 lg:space-y-6'>
+        <div className='flex flex-col justify-between lg:flex-row lg:items-center'>
+          <div className='text-base font-semibold md:text-xl'>
+            <p className='text-fg'>PT Tiga Daya Digital Indonesia</p>
+            <p className='bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'>
+              Fulltime Frontend Developer
+            </p>
+          </div>
+          <p className='text-sm text-fg/80 md:text-base lg:max-w-36 lg:text-right'>
+            January 2025 - Now
+          </p>
+        </div>
+        <p className='text-xs font-normal text-fg md:text-base'>
+          ✅ Developed an auction platform for JBA Indonesia (
+          <a
+            href='https://lelang.jba.co.id/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-blue-300'
+          >
+            https://lelang.jba.co.id/
+          </a>
+          ) using React, Next.js, TypeScript, TailwindCSS, and Zustand <br />✅
+          Developed an admin platform for managing the auction, featuring
+          dashboards, complex data tables, and comprehensive data management
+          capabilities (create, read, update, delete) <br />✅ Built responsive,
+          modular UI components and optimized client-side performance <br />✅
+          Integrated REST APIs, handled data fetching, caching, error states,
+          and rendered structured data to the UI <br />✅ Delivered a scalable,
+          maintainable frontend architecture aligned with client requirements
+        </p>
+        <div className='grid grid-cols-2 gap-4'>
+          <Image
+            src='https://res.cloudinary.com/dx34xih1p/image/upload/v1764379814/me_in_asl_fj6pef.jpg'
+            alt='startup template'
+            width={500}
+            height={500}
+            className='h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
+          />
+          <Image
+            src='https://res.cloudinary.com/dx34xih1p/image/upload/v1764378195/Lelang-Elektronik-JBA-Indonesia_gqigjg.png'
+            alt='startup template'
+            width={500}
+            height={500}
+            className='h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60'
+          />
+        </div>
+      </div>
+    ),
+  },
+  {
     title: '2023 - 2024',
     content: (
       <div className='space-y-3 lg:space-y-6'>
