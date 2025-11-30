@@ -14,10 +14,10 @@ function Home() {
       <HeroSection />
       <div className='bg-linear-to-b w-full from-dark via-dark to-black'>
         <AboutSection />
-        {/* <FeaturedProjects /> */}
+        <FeaturedProjects />
       </div>
       <div className='w-full bg-black/60 bg-earth-from-space bg-cover bg-no-repeat bg-blend-hard-light'>
-        {/* <TellMeSection /> */}
+        <TellMeSection />
       </div>
     </div>
   );
