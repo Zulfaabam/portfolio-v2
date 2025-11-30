@@ -1,5 +1,3 @@
-'use client';
-
 import React, { Dispatch, SetStateAction, useRef, useState } from 'react';
 import {
   motion,
@@ -7,8 +5,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from 'framer-motion';
-import { Link } from '@tanstack/react-router';
-import { usePathname } from 'next/navigation';
+import { Link, useMatchRoute } from '@tanstack/react-router';
 import { menu } from '@/lib/consts';
 
 export interface Position {
@@ -68,7 +65,7 @@ export default function Navbar() {
 }
 
 const SlideNav = () => {
-  const pathname = usePathname();
+  const matchRoute = useMatchRoute();
 
   const [position, setPosition] = useState<Position>({
     left: 0,
@@ -90,7 +87,7 @@ const SlideNav = () => {
         <Menu key={m.id} setPosition={setPosition}>
           <Link
             to={m.path}
-            className={`${pathname === m.path ? 'underline decoration-wavy' : ''} transition-all duration-300`}
+            className={`${matchRoute({ to: m.path }) ? 'underline decoration-wavy' : ''} transition-all duration-300`}
           >
             {m.title}
           </Link>

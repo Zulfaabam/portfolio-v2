@@ -8,7 +8,7 @@ import LongDescBox from '../about/long-desc-box';
 import LearningBox from '../about/learning-box';
 
 export default function AboutSection() {
-  const supabase = getSupabaseServerClient();
+  // const supabase = getSupabaseServerClient();
 
   // const { data, error: techStackError } = await supabase
   //   .from('tech_stack')
@@ -19,7 +19,7 @@ export default function AboutSection() {
   return (
     <Section
       id='about'
-      className='text-fg grid w-full grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-12 xl:gap-6'
+      className='grid w-full grid-cols-1 gap-2 text-fg sm:grid-cols-2 lg:grid-cols-12 xl:gap-6'
     >
       {/* <TechStackBox techStack={techStack} /> */}
       <AboutMeBox />

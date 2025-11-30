@@ -1,10 +1,9 @@
-'use client';
 import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 import Chip from './chip';
-import Image from 'next/image';
+import { Image } from '@unpic/react';
 import { motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
 import { TechStack } from '../about/tech-stack-box';
+import { useMatchRoute } from '@tanstack/react-router';
 
 export interface ProjectCardProps {
   image: string;
@@ -25,9 +24,9 @@ export default function ProjectCard({
   live_url,
   idx,
 }: ProjectCardProps) {
-  const pathname = usePathname();
+  const matchRoute = useMatchRoute();
 
-  const isProjectsPage = pathname === '/projects';
+  const isProjectsPage = matchRoute({ to: '/projects' });
 
   return (
     <motion.div
@@ -46,7 +45,7 @@ export default function ProjectCard({
               ? 0.2
               : 0.65,
       }}
-      className='bg-fg min-w-[285px] rounded-2xl p-3 shadow-[0_0_5px_1.5px_rgba(234,240,245,1)] lg:w-full lg:p-4'
+      className='min-w-[285px] rounded-2xl bg-fg p-3 shadow-[0_0_5px_1.5px_rgba(234,240,245,1)] lg:w-full lg:p-4'
     >
       <div className='space-y-1 lg:space-y-2'>
         <motion.div
@@ -61,22 +60,22 @@ export default function ProjectCard({
           <Image
             src={image ? image : '/no-image.svg'}
             alt={title}
-            fill
+            layout='fullWidth'
             className='rounded-lg object-cover'
           />
         </motion.div>
-        <h6 className='text-dark text-lg font-medium lg:text-xl'>{title}</h6>
-        <p className='text-dark/80 line-clamp-3 h-[60px] text-xs lg:text-sm'>
+        <h6 className='text-lg font-medium text-dark lg:text-xl'>{title}</h6>
+        <p className='line-clamp-3 h-[60px] text-xs text-dark/80 lg:text-sm'>
           {description}
         </p>
       </div>
       <div className='mt-8 flex w-full justify-between gap-2 lg:mt-12 lg:items-center'>
-        <div className='flex items-center gap-[2px] lg:gap-1'>
+        <div className='flex items-center gap-0.5 lg:gap-1'>
           {tech_stack?.map((tech) => (
             <Chip
               key={tech.id}
               label={tech.name}
-              className='from-dark/70 to-dark text-fg bg-linear-to-br text-[10px]'
+              className='bg-linear-to-br from-dark/70 to-dark text-[10px] text-fg'
             />
           ))}
         </div>
@@ -88,7 +87,7 @@ export default function ProjectCard({
             <motion.a
               whileHover={{ translateY: -3, translateX: 3 }}
               href={github_url}
-              className='bg-dark text-fg flex h-7 w-7 cursor-pointer items-center justify-center rounded-full lg:h-8 lg:w-8'
+              className='flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-dark text-fg lg:h-8 lg:w-8'
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -99,7 +98,7 @@ export default function ProjectCard({
             <motion.a
               whileHover={{ translateY: -3, translateX: 3 }}
               href={live_url}
-              className='bg-dark text-fg flex h-7 w-7 cursor-pointer items-center justify-center rounded-full lg:h-8 lg:w-8'
+              className='flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-dark text-fg lg:h-8 lg:w-8'
               target='_blank'
               rel='noopener noreferrer'
             >

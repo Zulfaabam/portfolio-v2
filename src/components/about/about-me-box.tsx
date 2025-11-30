@@ -1,8 +1,7 @@
-'use client';
 import { boxClasses } from '@/lib/consts';
 import { cn } from '@/lib/utils';
 import { IconDownload } from '@tabler/icons-react';
-import Image from 'next/image';
+import { Image } from '@unpic/react';
 import { motion } from 'framer-motion';
 
 export default function AboutMeBox() {
@@ -21,7 +20,7 @@ export default function AboutMeBox() {
         <Image
           src='/abam.jpg'
           alt='abam'
-          fill
+          layout='fullWidth'
           priority
           className='rounded-full'
         />

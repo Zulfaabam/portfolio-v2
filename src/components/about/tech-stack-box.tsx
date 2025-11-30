@@ -1,4 +1,3 @@
-'use client';
 import { boxClasses } from '@/lib/consts';
 import { cn } from '@/lib/utils';
 import Chip from '../ui/chip';
@@ -77,7 +76,7 @@ export default function TechStackBox({ techStack }: TechStackBoxProps) {
             <div data-swapy-item={tech.id}>
               <Chip
                 label={tech.name}
-                className='bg-opacity-70 from-accent/70 to-primary/70 text-fg text-opacity-90 cursor-pointer bg-linear-to-br via-[#3BDDF4]/70 text-xs font-medium sm:text-sm'
+                className='bg-linear-to-br cursor-pointer bg-opacity-70 from-accent/70 via-[#3BDDF4]/70 to-primary/70 text-xs font-medium text-fg text-opacity-90 sm:text-sm'
               />
             </div>
           </div>

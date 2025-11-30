@@ -1,5 +1,3 @@
-// import FloatingSocmed from '@/components/floating-socmed';
-// import Navbar from '@/components/navbar';
 // import { Analytics } from '@vercel/analytics/next';
 import {
   Outlet,

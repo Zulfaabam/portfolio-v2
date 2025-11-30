@@ -1,4 +1,3 @@
-'use client';
 import { cn } from '@/lib/utils';
 import { IconArrowRight } from '@tabler/icons-react';
 import { motion } from 'framer-motion';

@@ -1,5 +1,3 @@
-'use client';
-
 import { boxClasses } from '@/lib/consts';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';

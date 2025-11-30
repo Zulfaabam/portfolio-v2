@@ -1,4 +1,3 @@
-'use client';
 import { cn } from '@/lib/utils';
 import React, {
   useState,
@@ -62,7 +61,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
       twinkleProbability,
       minTwinkleSpeed,
       maxTwinkleSpeed,
-    ]
+    ],
   );
 
   useEffect(() => {
@@ -137,7 +136,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   return (
     <canvas
       ref={canvasRef}
-      className={cn('h-full w-full absolute inset-0', className)}
+      className={cn('absolute inset-0 h-full w-full', className)}
     />
   );
 };

@@ -1,4 +1,3 @@
-'use client';
 import React, { ButtonHTMLAttributes } from 'react';
 
 export interface BorderMagicBtnProps<T> extends ButtonHTMLAttributes<T> {

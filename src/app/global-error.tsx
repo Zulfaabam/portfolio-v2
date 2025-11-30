@@ -1,4 +1,3 @@
-'use client';
 import ErrorContent from '@/components/error-content';
 import Section from '@/components/section';
 

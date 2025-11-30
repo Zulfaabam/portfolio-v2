@@ -1,20 +1,27 @@
-'use client';
 import {
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
 } from '@tabler/icons-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function FloatingSocmed() {
-  const width = typeof window !== 'undefined' && window.innerWidth;
-
-  const [visible, setVisible] = useState(
-    !width ? false : width < 1280 ? false : true,
-  );
+  const [isClient, setIsClient] = useState(false);
+  const [visible, setVisible] = useState(false); // ← stable SSR value
 
   const ICON_COLOR: string = '#171717';
+
+  useEffect(() => {
+    // Now we are on the client — safe to access window
+    const width = window.innerWidth;
+
+    // Determine initial visibility after hydration
+    setVisible(width >= 1280);
+    setIsClient(true);
+  }, []);
+
+  const width = isClient ? window.innerWidth : undefined;
 
   return (
     <motion.div

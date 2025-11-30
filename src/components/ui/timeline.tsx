@@ -1,4 +1,3 @@
-'use client';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -28,12 +27,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className='bg-dark w-full' ref={containerRef}>
+    <div className='w-full bg-dark' ref={containerRef}>
       <div className='mx-auto max-w-7xl px-4 py-10 md:px-8 lg:px-10 lg:py-20'>
-        <h2 className='text-fg mb-4 max-w-4xl text-2xl md:text-4xl'>
+        <h2 className='mb-4 max-w-4xl text-2xl text-fg md:text-4xl'>
           My Journey So Far
         </h2>
-        <p className='text-fg max-w-sm text-sm md:text-base'>
+        <p className='max-w-sm text-sm text-fg md:text-base'>
           I&apos;ve been working as a Frontend Developer for 3+ years.
           Here&apos;s my timeline.
         </p>
@@ -46,7 +45,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             className='flex justify-start pt-10 md:gap-10 md:pt-40'
           >
             <div className='sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm'>
-              <div className='bg-dark absolute left-3 flex h-10 w-10 items-center justify-center rounded-full md:left-3'>
+              <div className='absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-dark md:left-3'>
                 <div className='h-4 w-4 rounded-full border border-neutral-700 bg-neutral-800 p-2' />
               </div>
               <h3 className='hidden text-xl font-bold text-neutral-500 md:block md:pl-20 md:text-5xl'>
@@ -54,7 +53,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
             </div>
 
-            <div className='relative w-full pr-4 pl-20 md:pl-4'>
+            <div className='relative w-full pl-20 pr-4 md:pl-4'>
               <h3 className='mb-4 block text-left text-2xl font-bold text-neutral-500 md:hidden'>
                 {item.title}
               </h3>
@@ -66,14 +65,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           style={{
             height: height + 'px',
           }}
-          className='absolute top-0 left-8 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8'
+          className='absolute left-8 top-0 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8'
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className='from-primary via-secondary absolute inset-x-0 top-0 w-[2px] rounded-full bg-linear-to-t from-[0%] via-[10%] to-transparent'
+            className='bg-linear-to-t absolute inset-x-0 top-0 w-[2px] rounded-full from-primary from-[0%] via-secondary via-[10%] to-transparent'
           />
         </div>
       </div>

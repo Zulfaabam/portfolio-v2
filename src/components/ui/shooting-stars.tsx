@@ -1,4 +1,3 @@
-'use client';
 import { cn } from '@/lib/utils';
 import React, { useEffect, useState, useRef } from 'react';
 
@@ -117,7 +116,7 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
   return (
     <svg
       ref={svgRef}
-      className={cn('w-full h-full absolute inset-0', className)}
+      className={cn('absolute inset-0 h-full w-full', className)}
     >
       {star && (
         <rect
