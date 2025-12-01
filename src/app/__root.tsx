@@ -8,6 +8,8 @@ import {
 import appCss from './globals.css?url';
 import FloatingSocmed from '@/components/floating-socmed';
 import Navbar from '@/components/navbar';
+import Section from '@/components/section';
+import ErrorContent from '@/components/error-content';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -44,27 +46,18 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  errorComponent: ({ reset }) => (
+    <div className='relative flex min-h-screen w-full items-center bg-dark'>
+      <Section
+        id='error-root'
+        className='flex flex-col items-center justify-center gap-2'
+      >
+        <ErrorContent reset={() => reset()} />
+      </Section>
+    </div>
+  ),
   component: RootLayout,
 });
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <html lang='en' className={`${outfit.className} `}>
-//       <body>
-//         <div id='root' className='relative'>
-//           <Navbar />
-//           <FloatingSocmed />
-//           {children}
-//           <Analytics />
-//         </div>
-//       </body>
-//     </html>
-//   );
-// }
 
 function RootLayout() {
   return (
