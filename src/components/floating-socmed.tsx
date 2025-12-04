@@ -3,7 +3,7 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
 } from '@tabler/icons-react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function FloatingSocmed() {

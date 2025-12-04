@@ -26,16 +26,17 @@
     ],
     "baseUrl": "src/",
     "paths": {
+      "@/*": ["./src/*"],
       "@/lib/*": ["lib/*"],
       "@/components/*": ["components/*"]
     }
   },
   "include": [
-    // "./dist/types/**/*.ts",
-    "./next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    "eslint.config.js",
+    "prettier.config.js",
+    "vite.config.js"
   ],
   "exclude": ["./node_modules"]
 }

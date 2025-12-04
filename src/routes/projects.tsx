@@ -3,6 +3,23 @@ import Section from '@/components/section';
 import ProjectCard from '@/components/ui/project-card';
 import { getSupabaseServerClient } from '@/lib/supabase/server';
 import { createFileRoute } from '@tanstack/react-router';
+import { createServerFn } from '@tanstack/react-start';
+import { Project } from 'types';
+
+export const getProjects = createServerFn({ method: 'GET' }).handler(
+  async (): Promise<{ data: Project[]; error: { message: string } | null }> => {
+    const supabase = getSupabaseServerClient();
+
+    const { data, error } = await supabase
+      .from('projects')
+      .select(
+        `*, tech_stack:project_tech_stack(id:tech_stack_id, tech_stack(name))`,
+      );
+
+    if (error) throw new Error(error.message);
+    return { data, error };
+  },
+);
 
 export const Route = createFileRoute('/projects')({
   errorComponent: ({ reset }) => (
@@ -16,26 +33,21 @@ export const Route = createFileRoute('/projects')({
     </div>
   ),
   component: Projects,
+  loader: () => getProjects(),
 });
 
 function Projects() {
-  // const supabase = getSupabaseServerClient();
+  const { data, error } = Route.useLoaderData();
 
-  //   const { data, error } = await supabase
-  //     .from('projects')
-  //     .select(
-  //       `*, tech_stack:project_tech_stack(id:tech_stack_id, tech_stack(name))`,
-  //     );
-
-  //   const projects = data?.map((d) => ({
-  //     ...d,
-  //     tech_stack: d.tech_stack.map(
-  //       (stack: { id: number; tech_stack: { name: string } }) => ({
-  //         id: stack.id,
-  //         name: stack.tech_stack.name,
-  //       }),
-  //     ),
-  //   }));
+  const projects = data?.map((d) => ({
+    ...d,
+    tech_stack: d.tech_stack.map(
+      (stack: { id: number; tech_stack: { name: string } }) => ({
+        id: stack.id,
+        name: stack.tech_stack.name,
+      }),
+    ),
+  }));
 
   return (
     <div className='relative min-h-screen w-full bg-dark'>
@@ -51,15 +63,15 @@ function Projects() {
           </p>
         </div>
         <div className='grid grid-cols-1 gap-3 px-4 sm:grid-cols-2 md:gap-6 md:px-8 lg:px-10'>
-          {/* {error ? (
-              <p className='text-center text-red-400 sm:col-span-2'>
-                {error.message ?? 'Something when wrong!'}
-              </p>
-            ) : (
-              projects?.map((p, idx) => (
-                <ProjectCard key={p.id} idx={idx + 1} {...p} />
-              ))
-            )} */}
+          {error ? (
+            <p className='text-center text-red-400 sm:col-span-2'>
+              {error?.message ?? 'Something when wrong!'}
+            </p>
+          ) : (
+            projects?.map((p, idx) => (
+              <ProjectCard key={p.id} idx={idx + 1} {...p} />
+            ))
+          )}
         </div>
       </Section>
     </div>

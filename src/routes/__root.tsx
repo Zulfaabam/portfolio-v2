@@ -4,14 +4,18 @@ import {
   createRootRoute,
   HeadContent,
   Scripts,
+  createRootRouteWithContext,
 } from '@tanstack/react-router';
-import appCss from './globals.css?url';
+import appCss from '../globals.css?url';
 import FloatingSocmed from '@/components/floating-socmed';
 import Navbar from '@/components/navbar';
 import Section from '@/components/section';
 import ErrorContent from '@/components/error-content';
+import { QueryClient } from '@tanstack/react-query';
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient;
+}>()({
   head: () => ({
     meta: [
       { charSet: 'utf-8' },
@@ -46,29 +50,30 @@ export const Route = createRootRoute({
       },
     ],
   }),
-  errorComponent: ({ reset }) => (
-    <div className='relative flex min-h-screen w-full items-center bg-dark'>
-      <Section
-        id='error-root'
-        className='flex flex-col items-center justify-center gap-2'
-      >
-        <ErrorContent reset={() => reset()} />
-      </Section>
-    </div>
-  ),
-  component: RootLayout,
+  // errorComponent: ({ reset }) => (
+  //   <div className='relative flex min-h-screen w-full items-center bg-dark'>
+  //     <Section
+  //       id='error-root'
+  //       className='flex flex-col items-center justify-center gap-2'
+  //     >
+  //       <ErrorContent reset={() => reset()} />
+  //     </Section>
+  //   </div>
+  // ),
+  shellComponent: RootLayout,
 });
 
-function RootLayout() {
+function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' className='font-outfit'>
+    <html lang='en'>
       <head>
         <HeadContent />
       </head>
-      <body id='root' className='relative'>
+      <body id='root' className='relative font-outfit'>
         <Navbar />
         <FloatingSocmed />
-        <Outlet />
+        {children}
+        {/* <Outlet /> */}
         <Scripts />
       </body>
     </html>

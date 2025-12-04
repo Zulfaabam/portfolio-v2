@@ -3,7 +3,7 @@
 
 @import 'tailwindcss';
 
-@config '../../tailwind.config.ts';
+@config '../tailwind.config.ts';
 
 @theme inline {
   --font-outfit: 'Outfit Variable', sans-serif;

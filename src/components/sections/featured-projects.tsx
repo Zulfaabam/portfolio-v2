@@ -3,26 +3,40 @@ import Section from '../section';
 import { IconArrowRight } from '@tabler/icons-react';
 import ProjectCard from '../ui/project-card';
 import { getSupabaseServerClient } from '@/lib/supabase/server';
+import { createServerFn } from '@tanstack/react-start';
+import { useQuery } from '@tanstack/react-query';
+
+export const getFeaturedProjects = createServerFn({ method: 'GET' }).handler(
+  async () => {
+    const supabase = getSupabaseServerClient();
+
+    const { data, error } = await supabase
+      .from('projects')
+      .select(
+        `*, tech_stack:project_tech_stack(id:tech_stack_id, tech_stack(name))`,
+      )
+      .eq('is_featured', true);
+
+    if (error) throw new Error(error.message);
+    return { data, error };
+  },
+);
 
 export default function FeaturedProjects() {
-  // const supabase = getSupabaseServerClient();
+  const { data, error } = useQuery({
+    queryKey: ['featuredProjects'],
+    queryFn: () => getFeaturedProjects(),
+  });
 
-  // const { data, error } = await supabase
-  //   .from('projects')
-  //   .select(
-  //     `*, tech_stack:project_tech_stack(id:tech_stack_id, tech_stack(name))`,
-  //   )
-  //   .eq('is_featured', true);
-
-  // const projects = data?.map((d) => ({
-  //   ...d,
-  //   tech_stack: d.tech_stack.map(
-  //     (stack: { id: number; tech_stack: { name: string } }) => ({
-  //       id: stack.id,
-  //       name: stack.tech_stack.name,
-  //     }),
-  //   ),
-  // }));
+  const projects = data?.data?.map((d) => ({
+    ...d,
+    tech_stack: d.tech_stack.map(
+      (stack: { id: number; tech_stack: { name: string } }) => ({
+        id: stack.id,
+        name: stack.tech_stack.name,
+      }),
+    ),
+  }));
 
   return (
     <Section id='featured-projects' className='space-y-6 lg:space-y-11'>
@@ -41,7 +55,7 @@ export default function FeaturedProjects() {
         </Link>
       </div>
       <div className='flex snap-x snap-mandatory gap-3 overflow-x-scroll px-1 py-2 scrollbar-hide *:snap-center lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:py-0'>
-        {/* {error ? (
+        {error ? (
           <p className='text-center text-red-400 sm:col-span-2'>
             {error.message}
           </p>
@@ -49,7 +63,7 @@ export default function FeaturedProjects() {
           projects?.map((p, idx) => (
             <ProjectCard key={p.id} idx={idx + 1} {...p} />
           ))
-        )} */}
+        )}
       </div>
     </Section>
   );

@@ -61,7 +61,7 @@ export default function ProjectCard({
             src={image ? image : '/no-image.svg'}
             alt={title}
             layout='fullWidth'
-            className='rounded-lg object-cover'
+            className='h-full w-full rounded-lg object-cover'
           />
         </motion.div>
         <h6 className='text-lg font-medium text-dark lg:text-xl'>{title}</h6>
