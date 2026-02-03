@@ -4,6 +4,7 @@ import { outfit } from '@/lib/fonts';
 import FloatingSocmed from '@/components/floating-socmed';
 import Navbar from '@/components/navbar';
 import { Analytics } from '@vercel/analytics/next';
+import { IconInfoCircleFilled } from '@tabler/icons-react';
 
 export const metadata: Metadata = {
   title: 'Abams',
@@ -39,6 +40,20 @@ export default function RootLayout({
           <FloatingSocmed />
           {children}
           <Analytics />
+          <div className='fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center gap-1 bg-fg py-2 text-dark'>
+            <IconInfoCircleFilled size={20} color='#3d85c6' />
+            <p className='flex items-center justify-center gap-1 text-sm md:text-base'>
+              Working on my new Portfolio,
+              <a
+                href='https://abams-folio.netlify.app/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='underline-secondary flex items-center gap-0.5 font-medium text-secondary underline'
+              >
+                take a look
+              </a>
+            </p>
+          </div>
         </div>
       </body>
     </html>
